@@ -1,0 +1,1 @@
+['DISCOVERYREADERS', "How's the Weather?", 'A Look at Weather and How It Changes', 'By Melvin and Gilda Berger', 'IllustratedbyJohnEmil Cymerman']

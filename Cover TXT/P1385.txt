@@ -1,0 +1,1 @@
+['CAM', 'JANSEN', 'CASE#27', 'The Mystery Writer Mystery', 'David A.Adler', 'Illustratedby', 'JoyAllen']

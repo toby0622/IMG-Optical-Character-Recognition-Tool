@@ -1,0 +1,1 @@
+['Story', 'QALTDISNEY', 'a', 'Day', 'forevery day', 'of the year', 'SPRING']
