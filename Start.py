@@ -11,11 +11,10 @@ if __name__ == "__main__":
 
     data = []
 
+    # book cover ocr
     for i in range(0, 1544):
         textfile = image_ocr_match(image_path, i)
         data.append(textfile)
-
-    data = list(set(data))
 
     txt_export(data, ocr_txt_output)
 
