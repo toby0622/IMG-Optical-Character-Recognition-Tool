@@ -1,1 +1,1 @@
-['OSURVIVED', 'THE NAZI', 'INVASION,1944', 'byLauren', 'Tarshis', 'MSCHOLASTIC']
+['ISURVMED', '1944']

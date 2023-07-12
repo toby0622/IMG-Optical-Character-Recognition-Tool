@@ -1,1 +1,1 @@
-['最俊的', 'Les', '巨人', 'Derniers', 'Geants', '法蘭斯瓦·普拉斯', 'FrangoisPLACE', '陈太乙', '9']
+['最後的', 'Le', 'Derniers', '巨人', '我蘭斯瓦', '普拉斯', 'FIACI']

@@ -1,1 +1,1 @@
-['C064590', 'NUTCRACKER', '胡桃钳', '国·文/Serena Riglietti', '澤离/陈慧静']
+['胡桃鉗', 'Sereng', 'Rigliefi']

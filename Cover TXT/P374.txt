@@ -1,1 +1,1 @@
-['USBORNE YOUNG READING', "esop's", 'ables', 'F', 'Retold by', 'Carol Watson', 'IllustratedbyNick Price']
+['USBORNE', 'YOUNG', 'READING', 'Aesops', 'Fables', 'Retold', 'Carol', 'Wafson', 'by', 'Nick', 'Price']

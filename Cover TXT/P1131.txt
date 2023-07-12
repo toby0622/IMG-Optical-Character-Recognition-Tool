@@ -1,1 +1,1 @@
-['尼可丹姆的一天', 'Nicodeme', '文/阿涅絲·拉侯游', 'AgnesLaroche', '/史菜凡妮·奥古斯欧', 'StephanieAugusseau', '澤/李曼渝']
+['尼可丹姆的一天', 'Nicodeme', '立阿涅隸', '拉候對', '奧古斯魯', 'Stephanie']

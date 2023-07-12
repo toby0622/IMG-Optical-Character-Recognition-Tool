@@ -1,1 +1,1 @@
-['MAGIC', 'Dingoes at', 'Dinnertime', 'Mary PopeOsborne', 'BSCHOLASTIC']
+['MATIC', 'HOUSF', '#20', 'TREE', 'Dingoes', 'at', 'Dinnertime', 'Mary', 'Pope', 'Osborne']

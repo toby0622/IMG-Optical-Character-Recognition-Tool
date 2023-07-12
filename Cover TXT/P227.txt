@@ -1,1 +1,1 @@
-['USBORNE YOUNG READING', 'STORIES OF', 'USRBRHE', 'HAUNTED', 'HOUSES', 'Russell Punter', 'Wlustrated by Mike Phillips']
+['USBORNE', 'OUNG', 'READING', 'OF', 'STORIES', 'HAUNTED', 'HOWSE', 'Russell', 'Punter', 'Wustrated', 'by', 'Mike', 'phillips']

@@ -1,1 +1,1 @@
-['TheBerenstainBears', 'FIRST', 'NEW', 'TIME', 'BOOKS', 'NEIGHBORS', 'Stan&']
+['The', 'Sorersatn', 'Soahg', 'FiFST', 'NEK', 'EIGHEOR', 'Stan', '中']

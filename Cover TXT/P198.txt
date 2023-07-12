@@ -1,1 +1,1 @@
-['MARC BROWN', 'Chapter Book 2', 'ARTHUR', 'Arthur and the', 'Scare-Your-Pants-Off', 'Club', 'Arthur', 'Ty Show', 'on', 'FC', 'PBS', 'MONSIE']
+['MARC', 'Chapfer', 'Book', '2', 'BROWN', 'ARTHUR', 'Arthur', 'and', 'the', 'ScareaYour-Pants-Off', 'Club', 'Natcs', 'Artho?', 'TT', 'Show', '8', 'PBS']

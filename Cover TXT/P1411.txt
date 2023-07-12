@@ -1,1 +1,1 @@
-['MAGIC', 'High Tide', 'inHawai', 'MaryPopeOsborne', 'MSCHOLASTIC']
+['AGIC', 'HOUSE', '#28', 'TREE', 'High', 'Tide', 'in', 'Hawaii', 'Mary', 'Pope', 'Osborne']

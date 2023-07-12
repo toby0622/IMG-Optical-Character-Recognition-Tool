@@ -1,1 +1,1 @@
-['CAMJANSEN', 'CASE#20', 'The Basketball Mystery', 'David A. Adler', 'lllustrated by', 'JoyAllen']
+['CAJ', 'JANSEN', 'The', 'Basketball', 'Mystery', 'David', 'A.', 'Adler', 'Iugtrated', 'Joy', 'Allen']

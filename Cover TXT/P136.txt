@@ -1,1 +1,1 @@
-['MAGIC', 'AMERLINMISSION', 'leprechaunin', 'ateWinter', 'MaryPopeOsborne', 'MSCHOLASTIC']
+['AGIE', '[Eprechaun', 'in', 'Gte', 'QWinter', 'Nar.', 'Pope', 'Oshorne']

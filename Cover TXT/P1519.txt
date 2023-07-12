@@ -1,1 +1,1 @@
-['Books', 'the', 'in', 'Spotlio', 'ancers', 'written by Ellen Dreyer', 'illustrated by Nancy Carpenter']
+['Fooks', 'thc', 'Spoflus.', 'Ooncers', '關', 'Writien', '中', 'EIen', 'Dreyer', 'ustrated', 'Nancy', 'Carpenter']

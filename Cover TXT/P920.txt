@@ -1,1 +1,1 @@
-['LOUISSACHAR', 'Winner of the Newbery Medal for Holes', 'MARVIN', 'REDPOST', 'AMagic Crystal?']
+['LOUIS', 'SACHAR', 'the', 'Newbery', 'for', 'MARVIN', 'REDPOST', 'A', 'Magic', 'Crystal?']

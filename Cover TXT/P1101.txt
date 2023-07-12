@@ -1,1 +1,1 @@
-['MAGIC', 'Ghost Town', 'at', 'Sundown', 'Mary Pope Oshorne', 'BARBER', 'SCHOLASTIC']
+['Ahi c.', 'HOUSE', 'TREF', 'Ghost', 'Town', 'at', 'Sundown']

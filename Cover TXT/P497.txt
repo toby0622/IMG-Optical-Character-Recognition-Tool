@@ -1,1 +1,1 @@
-['READY-TO+READ', 'SCIENCE', 'FUN', 'The Sugary Secrets', 'Candy', 'Behind', 'STUFE', "by Rlle O'Ryan", 'ilustrated by', 'FAST', 'CANDY', 'Rob MeClurkan', 'IN']
+['READATO:*READ', 'SCIFNCE', 'The', 'UN', 'Sugary', 'Secret.', 'Behind', 'candy', 'CANDY']

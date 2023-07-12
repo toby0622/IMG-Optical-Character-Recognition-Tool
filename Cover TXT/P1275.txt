@@ -1,1 +1,1 @@
-['ANiMAL', 'ARKO', 'RunawayHamster', 'LucyDaniels']
+['ARKP', 'Runaway', 'Hamster']

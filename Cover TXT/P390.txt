@@ -1,1 +1,1 @@
-['Encyclopedia', "EVERYONE'S", 'Brown', 'FAVORITE', 'BOY DETECTIVE', 'and the', 'Case of the', 'SecretUFOs', 'DONALDJ.SOBOL']
+['Encyclopedia', 'Brown', 'FAVOBTE', 'DBTECTME', 'Boy', 'the', 'and', 'Ba88', 'The', 'JFOS', 'Sedrei', 'DONALD', 'J.', 'SOBOI']

@@ -1,1 +1,1 @@
-['Pixie', 'Tricks', 'The Angry Elf', 'WrittenBy', 'fraceyWest', 'IlustratedBy', 'XauierBon', 'RSCHOLASTIC']
+['TFicks', 'The', 'Angry', 'EIf', 'West']

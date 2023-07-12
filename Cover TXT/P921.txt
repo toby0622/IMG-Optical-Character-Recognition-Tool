@@ -1,1 +1,1 @@
-['LOUISSACHAR', 'Winner of the Newbery Medal for Holes', 'MARVIN', 'REDPOST', 'ClassPresident']
+['LOUIS', 'SACHAR', 'Ninner', 'Nebert', 'Melal', 'MARVIN', 'REDPOST', 'Class', 'President']

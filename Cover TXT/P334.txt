@@ -1,1 +1,1 @@
-["AN'MAL", 'ARK', 'Fox Cub Danger', 'Lucy Daniels']
+['ANYNA', 'ARK', 'Fox', 'Cub', 'Danger', 'Luey', 'Daniels']

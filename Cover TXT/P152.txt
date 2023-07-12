@@ -1,1 +1,1 @@
-['USBORNE YOUNGREADING', 'Midnight', 'Ghosts', 'EmmaFischel', 'Illustrated by Adrienne Kern']
+['USBORNE', 'YOUNG', 'REAdiNG', 'Muidright', 'Ghoste', 'Emrma', 'Fische!', 'fllustrated', 'by', 'Adienne', 'Ker']

@@ -1,1 +1,1 @@
-['Super Secret', 'Surprise', 'byGaryMiller', 'illustratedbyMickReed']
+['Secret', 'Surprise']

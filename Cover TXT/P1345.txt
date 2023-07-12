@@ -1,1 +1,1 @@
-['AGIC', 'Iwister', 'on', 'Tuesday', 'MaryPope', 'Osborne', 'MSCHOLASTIC']
+['AGIC', 'HOUSE', '#23', 'TREE', 'wister', 'on', 'Nesday', 'ary', 'Pope', 'Osborme']

@@ -1,1 +1,1 @@
-['TheBerenstainBears', 'voe', 'TheirNeighbors', 'to']
+['Thel', 'Boerso', 'Beg2', 'Voe', 'Their', 'Neighbors']

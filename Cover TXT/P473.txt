@@ -1,1 +1,1 @@
-['ALucky', 'Oxford', 'Reodinc', 'TTee', 'Find', 'Hunt andAlexBrychta']
+['Lucky', 'Find']

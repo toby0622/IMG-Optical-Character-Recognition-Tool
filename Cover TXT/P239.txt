@@ -1,1 +1,1 @@
-['A-Z Mystenias', 'SUPER EDITION', 'SLEEPY', 'HoLLOW', 'SLEEPOVER', 'BY RON ROY']
+['NZ', 'Mysunias', 'SUPER', 'EOTo', 'SLEEPY', 'HoLLOW', 'SLEEPOVER']

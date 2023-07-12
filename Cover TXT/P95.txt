@@ -1,1 +1,1 @@
-['Encyclopedia', 'Brown', "EVERYONE'S", 'FAVORITE', 'BOY DETECTIVE', 'GetsHis Man', 'DONALD J.SOBOL']
+['Encyclopedia', 'Brown', 'EVEA形ON店S', 'Dets', 'DONALD', 'SoB0L']

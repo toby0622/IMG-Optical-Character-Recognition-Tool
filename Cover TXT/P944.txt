@@ -1,1 +1,1 @@
-['LOUISSACHAR', 'winnerortheNewbery Medal forHoles', 'MARVIN REDPOST', 'Kidnappedat', 'Birth?']
+['CUIS', 'SACHAR', 'e', 'Newbery', 'Maa', 'for', 'Hales', 'MARVIR', 'REDPOST', 'Kidnapped', 'at', 'Birth?']

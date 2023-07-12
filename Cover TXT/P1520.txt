@@ -1,1 +1,1 @@
-['M..LEONARD G SAM SEDGMAN', 'DANGER', 'TDEAD', 'MAN', 'PAS', 'Metroledy Elisa Pugan']
+['DANGER', 'DEAD', 'MAN', 'RAS']

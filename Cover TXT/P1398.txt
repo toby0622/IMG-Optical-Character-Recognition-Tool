@@ -1,1 +1,1 @@
-['Cuid Blyton', 'FARAWAYTREE', 'A', 'Adventure', 'A colour', 'short story', 'illustrated by', 'AlexPaterson', 'The Land of', 'GOODIES']
+['Cwd', 'Buto.', 'CARAVAY', 'TREE', 'Adventure', 'colou!', 'short', 'estrotedt!', 'Land', 'of', 'The', 'GOODIES']

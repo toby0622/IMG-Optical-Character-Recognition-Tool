@@ -1,1 +1,1 @@
-['Boebeccais', 'AnEllisIslandAdventure', 'byCynthiaBenjaminillustratedbyJamesSeward', 'Harcourt']
+['Oy', 'Belegeu?', 'An', 'Island', 'Adoenture.', 'by cynthia', 'Husirated by James Seward', 'gHarcourt']

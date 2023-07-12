@@ -1,1 +1,1 @@
-['GAME OYER:', 'BOYO', 'SUPERRABBIT', 'HOLA', '15', 'FLINTHAM', 'THOMAS']
+['P8555', '5TE!', '山門']

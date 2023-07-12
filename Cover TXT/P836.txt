@@ -1,1 +1,1 @@
-['DISCOVERYREADERS', "How's the Weather?", 'A Look at Weather and How It Changes', 'By Melvin and Gilda Berger', 'IllustratedbyJohnEmil Cymerman']
+['MISGOVER', "How's", 'the', 'Weather?', 'L00k', 'Weather', 'ard', 'Hlow', 'Chianges', 'by', 'Melvin', 'and', 'Gilda', 'Berger', 'mustrated', 'by', 'John', 'Emil', 'Cymerman']

@@ -1,1 +1,1 @@
-['MAGIC', 'AMERLINMISSION', 'Abe Lincoln', 'at', 'Last!', 'MaryPopeOsborne', 'MSCHOLASYIC']
+['CZbe', '[incoln', '/st!', 'at', 'Nar', 'Pop.', 'Osborn.']

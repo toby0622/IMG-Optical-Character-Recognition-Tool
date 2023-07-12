@@ -1,1 +1,1 @@
-['S AVEHTUREE DETITI', '丁丁在刚果', 'IM', 'At']
+['J子在剛果', 'O']

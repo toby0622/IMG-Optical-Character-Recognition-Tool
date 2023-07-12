@@ -1,1 +1,1 @@
-['Everyone', 'Can Help', 'Harcour']
+['Help', 'Trcour']

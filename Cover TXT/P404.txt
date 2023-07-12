@@ -1,1 +1,1 @@
-['Encyclopedia', 'Brown', "EVERYONE'S", 'FAVORITE', 'BOY DETECTIVE', 'and the', 'Case of the', 'Carnival Crime', 'DONALDJ.SOBOL']
+['Encyclopedia', 'BXEBYONE', '3rown', 'FAVORITE', 'BOY', 'DETEGTIDE', 'a0', 'tbe', 'UES8', 'Grime', 'Garninal', 'J', 'SOBOI', 'DONALD']

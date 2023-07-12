@@ -1,1 +1,1 @@
-['USBORNE YOUNG READING', 'The', 'Magic', 'Gifts', 'RetoldbyRussell Punter', 'IllustratedbyGabo Leon Bernstein']
+['USBORNE', 'KOUNC', 'READINC', 'The', 'Magic', 'Gifts', 'Retold by', 'Russell', 'Pu!ler', 'ustrated', 'by', 'Cabo', 'Lean', 'Berstelr']

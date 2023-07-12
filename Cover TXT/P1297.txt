@@ -1,1 +1,1 @@
-['夜', 'Nightingale', '桃固市立图書馆平镇分馆', 'C10028522', '安徒生Hans ChristianAndersen原著', '詹姆士·布鲁雨JamesBrewer改窝', '59', '安德斯·弗朗Anders StoltenbergFrang圖', '翼华KarenKung澤']
+['Nihtingale', 'RRO', '安徒生', 'Hins', 'Chtistian', 'Andersen', '原著', '詹姆士', '一田', '布魯', 'James', 'Brewer', '改寫', '安德斯', '弗', '朗', 'A ndets', 'Stolten berg I', 'Frng', '圖', '龔華', 'Karen', 'Kung', '譯']

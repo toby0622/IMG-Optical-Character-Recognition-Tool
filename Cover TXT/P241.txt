@@ -1,1 +1,1 @@
-['USBORNE YOUNGREADING', 'The', "Emperor's", 'New', 'Clothes', 'from the story by', 'Hans Christian Andersen', 'Illustrated by Mike Gordon']
+['USBORNE', 'YOUNG', 'READING', 'The', "Emp'ror's", 'Nev', 'Clothes', 'from', 'the', 'story', '5', 'Hans', 'Christian', 'Andersen', 'b', 'Mike', 'llustrated', 'Cordon']

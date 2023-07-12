@@ -1,1 +1,1 @@
-['USBORNE YOUNG READING', 'T', 'reasure', 'sland', 'Basedonthe storyby', 'ROBERTLOUISSTEVENSON', 'IllustratedbyPeterDennis']
+['USBORNE', 'YOUNG', 'READING', 'Island', '+he stot', 'ROBERI', 'HOUISSTEVENSON', 'Tust ated', 'Peter', 'Denni']

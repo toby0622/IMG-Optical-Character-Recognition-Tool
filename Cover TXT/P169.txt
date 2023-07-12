@@ -1,1 +1,1 @@
-['AWeS', 'Animajs', 'Penguin', 'Pandemonium', 'The', 'Wild Beast', 'Jeanne', 'Willis']
+['Penguin', 'Pundemehiuim', 'The', 'Beast', 'Wila']

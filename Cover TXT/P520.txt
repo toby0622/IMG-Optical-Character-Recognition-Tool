@@ -1,1 +1,1 @@
-['原來', '天氣', '是這样子阿！', 'My first Weotherpicture bool']
+['原求', '天氣', '是這樣子阿']

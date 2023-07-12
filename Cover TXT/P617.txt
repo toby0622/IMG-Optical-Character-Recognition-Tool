@@ -1,1 +1,1 @@
-['AGiftforthe', 'Ordord', 'Emperor', 'Reoding', 'Tree', 'Biff,Chip', 'andKipper', 'visit', 'China!', "Lee's", 'Series created by Roderick Hunt and Alex Brychta']
+['A', 'Gift', 'for', 'the', 'Emperor', 'Kippa', 'China!']

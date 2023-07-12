@@ -1,1 +1,1 @@
-['USBORNEYOUNGREADING', 'Jhe', 'andthe', 'Based onthe storyby', 'MarkTwain']
+['USBORNE', 'YOUNG', 'READING', 'Bised', 'on', 'The', 'story', 'Narl', 'Twain']

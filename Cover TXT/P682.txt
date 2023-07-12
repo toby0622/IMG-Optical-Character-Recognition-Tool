@@ -1,1 +1,1 @@
-['TheBerenstainBears', 'BEDTIMEBATTLE', 'Stan&JanBerenstain']
+['The Berersin', 'Bears.', 'DME', 'BE', '年']

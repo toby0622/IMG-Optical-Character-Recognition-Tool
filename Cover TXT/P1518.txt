@@ -1,1 +1,1 @@
-['BOOKS', "Uncle Arthur's", 'Challenge', 'written by Michele Spirn', 'illustrated by Lina Chesak']
+['Books', 'Uncle', "Arthur's", 'Challenge', 'Mehel', 'Spimn']

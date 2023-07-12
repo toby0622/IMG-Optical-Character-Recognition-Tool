@@ -1,1 +1,1 @@
-['平领市立阳書馆', '艾爾吉', 'C078715', 'LESAVENTURES DE TINTIN', '丁丁险記', '月球探险']
+['艾爾吉', 'LES', 'AWENtMRESDEtINTIN', '丁丁歷險記', '月球探險']

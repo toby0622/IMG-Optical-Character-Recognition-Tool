@@ -1,1 +1,1 @@
-['MAGIC', 'Hourofthe', 'Olympics', 'MaryPopeOsborne', 'ISCHOLASTIC']
+['AGIc', 'HOUSE', '#16', 'TREE', 'Hour', 'ofthe', 'Olympics', 'Mary', 'Pope', 'Osborne']

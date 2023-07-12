@@ -1,1 +1,1 @@
-['Australian', 'Oxford', 'Reading', 'Tree', 'Adventure', 'Series created by Roderick Hunt and Alex Brychta']
+['Austroen', 'Adwenture', '八', '上部']

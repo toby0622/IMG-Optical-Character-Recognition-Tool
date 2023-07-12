@@ -1,1 +1,1 @@
-['Story', 'QALTDISNEY', 'a', 'Day', 'forevery day', 'of the year', 'SPRING']
+['OArr+onEy', 'Story', 'a', 'Da', 'for', 'eror', 'o', 'The', 'year', 'SPRING']

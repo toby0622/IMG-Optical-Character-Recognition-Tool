@@ -1,1 +1,1 @@
-['USBORNE YOUNG READING', 'Wind', 'inthe', 'Willo', 'Based on the story by', 'KennethGrahame', 'Illustrated byMauro pangelista']
+['SBORNE', 'YOUNG', 'READINIG', 'The', 'Wia', 'the', 'in', 'Will833', 'Base', 'te', 'story', 'Kenreth', 'Brahamnd', 'lustratpd', 'by', 'MauKO', 'Spangelista']

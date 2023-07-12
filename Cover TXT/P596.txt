@@ -1,1 +1,1 @@
-['USBORNE YOUNG READING', 'Storiesof', 'Princes', 'and', 'ChristopherRawson', 'Illustrated by Stephen Cartwright']
+['USBORNE', 'YOUNG', 'READINC', 'of', 'Stories', 'rinces', 'and', 'Princesses', 'Christopher', 'Pawgon', 'Tllustrated', 'b', 'Stephen', 'Cartwriht']

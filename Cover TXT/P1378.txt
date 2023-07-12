@@ -1,1 +1,1 @@
-['AGIC', 'Good Morning,', 'Gorillas', 'MaryPope', 'Osborne', 'USCHOLASTIC']
+['AGIC', 'HOUSE', 'TREE', '#26', 'Good', 'Morning', 'Gorilias', 'Mary', 'Pope', 'osborne']

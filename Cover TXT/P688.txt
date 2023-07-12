@@ -1,1 +1,1 @@
-['TheBerenstainBears', 'FIRST', 'TIME', 'BOOKS', 'Stan&JanBerenstain']
+['The', 'Berensfin', 'Bears', 'andthr', 'PRTY', 'TE', 'SIOM$R']

@@ -1,1 +1,1 @@
-['ANDREW LOST', '12', 'n', 'THE', 'BYJ.D', 'GREENBURG', '一', 'L', 'HEE', '14.000YEARS AG', 'IME-A-TRC']
+['LOST', 'AIDBEU', 'GREETBURC', 'YEAr.', '14-000']

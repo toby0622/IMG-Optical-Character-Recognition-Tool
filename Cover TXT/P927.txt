@@ -1,1 +1,1 @@
-['Pixie', 'Tricks', 'The Halloween Goblin', 'Written By', 'Tracey West', 'NewYock Time', 'ingAa', 'MSCHOLASTIC', 'IllustratedBy', 'XavierBonet']
+['Pixie', 'T-cks', 'The', 'Halloween', 'Goblin', 'West', 'auier']

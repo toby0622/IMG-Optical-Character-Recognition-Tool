@@ -1,1 +1,1 @@
-['FLATSTANLEY', 'Stanleys', 'Christmas', 'Adventure', 'Jeff Brown', 'by']
+['UITSTNEY', 'Stanleys', 'Christmas', 'Adventure', 'Jeff', 'Brown', 'by.']

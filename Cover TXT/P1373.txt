@@ -1,1 +1,1 @@
-['CAM', 'JANSEN', 'CASE#28', 'The Green School Mystery', 'David A. Adler', 'GO', 'GREEN', 'GREET', 'llustratedby', 'JoyAllen']
+['JATSEN', 'The', 'Green', 'School', 'Mystery', 'David', 'A.', 'Adler', 'GO', 'CREEN', 'by', 'Joy', 'Allen']

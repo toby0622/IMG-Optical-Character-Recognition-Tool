@@ -1,1 +1,1 @@
-['Buffalo', 'Before', 'Breakfast', 'MaryPopeOsborne', 'MSCHOLASTIC']
+['AGle', 'HOUSE', 'TREE', 'Bufralo', 'Before', 'Breakfaist', 'Mary', 'Pope', 'osborne']

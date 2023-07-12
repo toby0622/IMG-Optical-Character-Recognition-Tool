@@ -1,1 +1,1 @@
-['GEORGE', 'MOON', 'LUCY&', 'STEPHEN HAWKING']
+['GEORGE', '雜BLU', 'MOON', 'LOct', 'STEPHEN', 'HAtuhING']

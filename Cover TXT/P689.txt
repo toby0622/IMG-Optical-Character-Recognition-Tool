@@ -1,1 +1,1 @@
-['TheBerenstainBears', 'FIRST', 'READERS', 'TIME', 'READY,GET SET', 'GO!', 'COACH', 'StanGJanBerenstain']
+['The Berenslain', 'Bears', 'GET', 'SET', 'READY', 'GO!', 'bOACH']

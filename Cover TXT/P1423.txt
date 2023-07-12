@@ -1,1 +1,1 @@
-['USBORNEYOUNG READING', "esop's", 'Fables', 'Retold be', 'Carol Watson', 'IlustratedbyNickPrice']
+['esops', 'Fables']

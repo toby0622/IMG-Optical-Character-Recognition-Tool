@@ -1,1 +1,1 @@
-['MAGIC', 'AMERLINMISSION', 'hristmas', 'in', 'C', 'amelot', 'MaryPope', 'Osborne', 'MSCHOLASTIC']
+['Hars', 'Pope', 'osborne']

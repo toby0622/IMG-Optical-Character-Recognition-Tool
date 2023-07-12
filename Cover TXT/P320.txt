@@ -1,1 +1,1 @@
-['GEORGE', 'SHIP', 'AND', 'THE', 'TIME', 'LUCY HAWKING']
+['GEORG', 'SHIP', 'AND', 'THE', 'TIME', 'LUCY', 'HAWKING']

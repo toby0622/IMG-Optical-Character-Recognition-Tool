@@ -1,1 +1,1 @@
-['A', 'Z', 'MyStErles', 'SUPER EDITION 9', 'APRIL', "FOOLS'FIASCO", 'BY RON ROY', 'HAHA HA', 'TANAE']
+['A', 'Z', 'MI', 'MStEries', 'SUIPER', 'EOITION', 'APRIL', 'Poots?', 'FTASCO', 'Fou', 'Ho']

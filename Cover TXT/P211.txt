@@ -1,1 +1,1 @@
-['SET', 'THE', "Don't Disturb the Dinosaurs", 'Sam Ricks', 'By Ada Hopper O lllustrated by', 'SCHOLASTIC']
+['H日MEN新URE', 'SET', 'THE', 'Donrt', 'DisturE', 'the', 'Dinosaurs', '2', 'iustnaoed', '日', 'Hoppe', 'Bya', 'SCHLOL／ST丨C']

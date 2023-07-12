@@ -1,1 +1,1 @@
-['Pixie', 'Tricks', 'The Pet Store Sprite', 'TraceyWest', 'astracedBy', 'XavierBonet', 'BSCHOLASTIC']
+['Pixie', 'Tricks', 'The', 'Pet', 'Store', 'Sprite']

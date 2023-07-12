@@ -1,1 +1,1 @@
-['READY-TOREAD', 'SCIENCE', 'OF', 'The Cool story Behind', 'FUN', 'Snow', 'STUFF', 'SCHOED', 'SHOHDAY', 'bymeteorologist Joe Rao', 'illustrated byDagneyDowney']
+['REIDYTO-READ', 'SCIENCF', 'IF', 'The', 'CoolstorgBehind', 'UN', 'Snow', 'Su']

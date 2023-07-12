@@ -1,1 +1,1 @@
-['14', 'ER', 'TURKEY', 'TROUBLE', 'ON THE', 'NATIONAL', 'MALL', 'byRon Roy']
+['CAPI', '14', 'JURKEY', 'TROUBLE', 'OF', 'T', 'NATIONA', 'MALL', 'No', 'N']

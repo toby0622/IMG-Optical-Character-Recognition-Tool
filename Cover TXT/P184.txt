@@ -1,1 +1,1 @@
-['Serour Simon', 'PLANETS', 'AROUND', 'THESUN']
+['Simon', 'ouI', 'RE', '巴IANETS', 'AROUN口', 'THE', 'SUN']

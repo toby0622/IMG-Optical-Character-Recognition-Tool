@@ -1,1 +1,1 @@
-['AZM', 'lystErles', 'SUPER EDITION 11', 'GRAND', 'CANYON', 'GRAB', 'BYRON ROY']
+['AZ', 'Mi', 'ystEnies', 'GRAND', 'CANYON', 'GRAB', 'Fo', 'Ho']

@@ -6,7 +6,7 @@ def image_ocr_match(image_path, counter_number):
     process_start = datetime.datetime.now()  # process starting time
 
     # "use_angle_cls=False" means not to use self-trained datasets
-    ocr_model = PaddleOCR(use_angle_cls=False, lang="ch", use_gpu=False)
+    ocr_model = PaddleOCR(use_angle_cls=False, lang="chinese_cht", use_gpu=False)
 
     # "use_angle_cls=True" means to apply other trained datasets or models
     # the one you would like to apply should be store in "models" folder
