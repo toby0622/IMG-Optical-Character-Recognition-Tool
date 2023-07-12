@@ -1,1 +1,0 @@
-['ITS7NY', '2', 'ADVENTRES', 'WORLDWIDE', 'Creat', 'Egyptian', 'The', 'Grave', 'Robbery']

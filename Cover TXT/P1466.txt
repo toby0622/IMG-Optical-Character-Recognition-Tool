@@ -1,1 +1,0 @@
-['UNCORNE', 'YOUNG', 'READING', 'Tard', 'S', 'Frank', 'Baum', 'AMauro', 'Evangelista']

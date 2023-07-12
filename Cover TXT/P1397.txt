@@ -1,1 +1,0 @@
-['CAN', 'JANSEN', 'The', 'Secret', 'Service', 'Mystery', 'David', 'A', 'Adler']

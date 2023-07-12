@@ -1,1 +1,0 @@
-['AGIC', 'HOUSE', '#24', 'TREE', 'Earthguake', 'in', 'the', 'Early', 'Morning', 'Nar', 'PDpe', 'Osborne']

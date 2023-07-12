@@ -1,1 +1,0 @@
-['IARC', 'EFOT', 'ARTHURS', 'PUPPY', 'L0B1']

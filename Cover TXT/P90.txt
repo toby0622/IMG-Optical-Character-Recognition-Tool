@@ -1,1 +1,0 @@
-['Bemnnimo', 'Sto', 'TEST', 'FDME', 'STH', '店']

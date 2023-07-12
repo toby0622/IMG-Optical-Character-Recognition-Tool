@@ -1,1 +1,0 @@
-['OSocer.', 'Mary.', 'Pope', 'Oshorne']

@@ -1,1 +1,0 @@
-['JAGIC', 'HOUSE', '#38', 'TREE', 'Souay', 'SNad', 'Geniu', 'Mar']

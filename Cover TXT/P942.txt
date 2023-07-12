@@ -1,1 +1,0 @@
-['TFicks', 'The', 'Angry', 'EIf', 'West']

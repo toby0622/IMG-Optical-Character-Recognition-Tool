@@ -1,1 +1,0 @@
-['LOUIS', 'SACHAR', 'the', 'Newbery', 'for', 'MARVIN', 'REDPOST', 'A', 'Magic', 'Crystal?']

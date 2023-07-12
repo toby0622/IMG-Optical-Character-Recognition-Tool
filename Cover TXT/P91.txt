@@ -1,1 +1,0 @@
-['MAGIC', 'HOUSE', '#39', 'TREE', 'SSIOI', 'Dark', 'Day', 'Deep', 'ti', 'Nar', 'Pope', 'Osbotmc']

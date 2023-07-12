@@ -1,1 +1,0 @@
-['ARKLG', '000', 'Kitten', 'Rescue', 'Lucy', 'Daniels']

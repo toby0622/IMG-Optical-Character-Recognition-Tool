@@ -1,1 +1,0 @@
-['AGIC', 'H0USE', 'TREE', '#2', 'Civil', 'War', 'Sunday', 'on', 'Mary', 'Pope', 'osborne']

@@ -1,1 +1,0 @@
-['JASON', 'AND', 'THE', 'GOUDEN', 'FLEECE']

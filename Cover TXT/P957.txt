@@ -1,1 +1,0 @@
-['SANUEL', 'HITI', '8山ILDING', 'F', 'SCIENCE', 'MAGNETISN']

@@ -1,1 +1,0 @@
-['GEORGE', 'BIG', 'BANG', 'LueY', 'STEPH店N', 'HAWKING']

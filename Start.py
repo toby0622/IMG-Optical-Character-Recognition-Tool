@@ -9,8 +9,14 @@ if __name__ == "__main__":
     print("PIC Optical Character Recognition Process Ongoing...")
     print("Waiting...")
 
+    data = []
+
     for i in range(0, 1544):
         textfile = image_ocr_match(image_path, i)
-        txt_export(textfile, ocr_txt_output, i)
+        data.append(textfile)
+
+    data = list(set(data))
+
+    txt_export(data, ocr_txt_output)
 
     print("All Process Finished.\n")

@@ -5,11 +5,7 @@ import datetime
 def image_ocr_match(image_path, counter_number):
     process_start = datetime.datetime.now()  # process starting time
 
-    # "use_angle_cls=False" means not to use self-trained datasets
-    ocr_model = PaddleOCR(use_angle_cls=False, lang="chinese_cht", use_gpu=False)
-
-    # "use_angle_cls=True" means to apply other trained datasets or models
-    # the one you would like to apply should be store in "models" folder
+    ocr_model = PaddleOCR(lang="chinese_cht", use_gpu=True, enable_mkldnn=True, cpu_threads=20)
 
     # ocr = PaddleOCR(use_angle_cls=True,lang="ch",
     #                 rec_model_dir='../models/ch_PP-OCRv3_rec_slim_infer/',

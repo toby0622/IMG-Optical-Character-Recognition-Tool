@@ -1,1 +1,0 @@
-['CAPI', '14', 'JURKEY', 'TROUBLE', 'OF', 'T', 'NATIONA', 'MALL', 'No', 'N']

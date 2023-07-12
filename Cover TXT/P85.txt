@@ -1,1 +1,0 @@
-['TH', 'SEU232E2', 'P2O2E2S', 'VOCANO', '8J', 'King']

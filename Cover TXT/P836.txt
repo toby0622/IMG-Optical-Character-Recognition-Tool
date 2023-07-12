@@ -1,1 +1,0 @@
-['MISGOVER', "How's", 'the', 'Weather?', 'L00k', 'Weather', 'ard', 'Hlow', 'Chianges', 'by', 'Melvin', 'and', 'Gilda', 'Berger', 'mustrated', 'by', 'John', 'Emil', 'Cymerman']

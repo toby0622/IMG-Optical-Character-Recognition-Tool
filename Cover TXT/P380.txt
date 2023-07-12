@@ -1,1 +1,0 @@
-['Hars', 'Pope', 'osborne']

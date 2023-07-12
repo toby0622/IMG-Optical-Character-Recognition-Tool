@@ -1,1 +1,0 @@
-['A', 'Gift', 'for', 'the', 'Emperor', 'Kippa', 'China!']

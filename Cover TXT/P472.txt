@@ -1,1 +1,0 @@
-['BIG', 'LITTLE', 'and', 'F90T', '中', 'Shorybu', 'ArI', 'Ellen', 'Pohter', 'Felici.', 'sala']

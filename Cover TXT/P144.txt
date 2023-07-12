@@ -1,1 +1,0 @@
-['CAJ', 'JANSEN', 'The', 'Basketball', 'Mystery', 'David', 'A.', 'Adler', 'Iugtrated', 'Joy', 'Allen']
