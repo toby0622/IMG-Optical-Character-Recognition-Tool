@@ -1,1 +1,1 @@
-[['歐風逐夢的男多', '威', '文／威廉', '坎寬巴', '布萊恩', '米勒', '伊莉莎白', '租能', '譯/謝靜雯'], ['Ret', 'Heton', 'Hurricane', 'by', 'S.W.', 'Gonzalez', 'Iustrated', 'oucet', 'Magmllany', 'MCGraWAH'], ['跟樂著', '動物搭飛機', '船一天'], ['AGIC', 'I0USE', '#20', 'TREE', 'Dingoes', 'at', 'Dinnertime', 'Mar', 'Pope', 'Osbofne'], ['我的弟一傑', '相對論']]
+['歐風逐夢的男多', '威', '文／威廉', '坎寬巴', '布萊恩', '米勒', '伊莉莎白', '租能', '譯/謝靜雯']
