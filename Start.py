@@ -11,8 +11,8 @@ if __name__ == "__main__":
 
     data = []
 
-    # book cover ocr
-    for i in range(0, 1544):
+    # book cover ocr, total case 1544
+    for i in range(0, 5):
         textfile = image_ocr_match(image_path, i)
         data.append(textfile)
 
