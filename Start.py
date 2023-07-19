@@ -10,7 +10,7 @@ if __name__ == "__main__":
     print("PIC Optical Character Recognition Process Ongoing...")
     print("Waiting...")
 
-    data = [[] for _ in range(154)]
+    data = []
 
     cc = OpenCC('s2tw')
 
@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
         for j in textfile:
             j = cc.convert(str(j))
-            data[i].append(j)
+            data.append(j)
             # print(type(data))
 
     txt_export(data, ocr_txt_output)

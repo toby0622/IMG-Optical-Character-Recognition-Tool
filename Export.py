@@ -17,6 +17,6 @@ def csv_export(datafile, output_folder):
     with open(output_folder + "SunHan" + ".csv", 'w', encoding='UTF-8', newline='') as textfile:
         writer = csv.writer(textfile)
 
-        writer.writerows(datafile)
+        writer.writerow(datafile)
 
     # process_finish = datetime.datetime.now()  # process finishing time
