@@ -1,24 +1,28 @@
 from OCR import *
-from Search import *
 from Export import *
+from opencc import OpenCC
 
 
 if __name__ == "__main__":
-    image_path = "Book Cover Dataset/"
-    ocr_txt_output = "Cover TXT/"
+    image_path = "SunHan Dataset/"
+    ocr_txt_output = "SunHan Text Output/"
 
     print("PIC Optical Character Recognition Process Ongoing...")
     print("Waiting...")
 
-    data = []
+    data = [[] for _ in range(154)]
 
-    # book cover ocr, total case 1544
-    for i in range(0, 1):
+    cc = OpenCC('s2tw')
+
+    for i in range(0, 154):
         textfile = image_ocr_match(image_path, i)
 
         for j in textfile:
-            data.append(j)
+            j = cc.convert(str(j))
+            data[i].append(j)
+            # print(type(data))
 
     txt_export(data, ocr_txt_output)
+    csv_export(data, ocr_txt_output)
 
     print("All Process Finished.\n")

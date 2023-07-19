@@ -5,14 +5,14 @@ import datetime
 def image_ocr_match(image_path, counter_number):
     process_start = datetime.datetime.now()  # process starting time
 
-    ocr_model = PaddleOCR(lang="chinese_cht", use_gpu=True, enable_mkldnn=True, cpu_threads=20)
+    ocr_model = PaddleOCR(lang="ch", use_gpu=True, enable_mkldnn=True, cpu_threads=20)
 
     # ocr = PaddleOCR(use_angle_cls=True,lang="ch",
     #                 rec_model_dir='../models/ch_PP-OCRv3_rec_slim_infer/',
     #                 cls_model_dir='../models/ch_ppocr_mobile_v2.0_cls_slim_infer/',
     #                 det_model_dir='../models/ch_PP-OCRv3_det_slim_infer/')
 
-    actual_image_path = image_path + "P" + str(counter_number) + ".jpg"
+    actual_image_path = image_path + "B" + str(counter_number) + ".jpg"
 
     recognition_result = ocr_model.ocr(actual_image_path)
 
