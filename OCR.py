@@ -12,16 +12,18 @@ def image_ocr_match(image_path, counter_number):
     #                 cls_model_dir='../models/ch_ppocr_mobile_v2.0_cls_slim_infer/',
     #                 det_model_dir='../models/ch_PP-OCRv3_det_slim_infer/')
 
-    actual_image_path = image_path + "Photo" + str(counter_number) + ".jpg"
+    actual_image_path = image_path + "B" + str(counter_number) + ".jpg"
 
     recognition_result = ocr_model.ocr(actual_image_path)
 
-    result = recognition_result[0]
-
-    data = [raw[1][0] for raw in result]
+    # result = recognition_result[0]
+    #
+    # data = [raw[1][0] for raw in result]
 
     # for result in recognition_result:
     #     print(result[1][0])
+
+    data = recognition_result[0]
 
     process_finish = datetime.datetime.now()  # process finishing time
 
