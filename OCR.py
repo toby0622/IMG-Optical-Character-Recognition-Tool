@@ -12,7 +12,7 @@ def image_ocr_match(image_path, counter_number):
     #                 cls_model_dir='../models/ch_ppocr_mobile_v2.0_cls_slim_infer/',
     #                 det_model_dir='../models/ch_PP-OCRv3_det_slim_infer/')
 
-    actual_image_path = image_path + "B" + str(counter_number) + ".jpg"
+    actual_image_path = image_path + "Photo" + str(counter_number) + ".jpg"
 
     recognition_result = ocr_model.ocr(actual_image_path)
 
