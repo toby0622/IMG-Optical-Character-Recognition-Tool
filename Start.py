@@ -4,11 +4,14 @@ from opencc import OpenCC
 
 
 if __name__ == "__main__":
-    image_path = "SunHan Dataset/"
-    ocr_txt_output = "SunHan Text Output/"
+    # image_path = "SunHan Dataset/"
+    # ocr_txt_output = "SunHan Text Output/"
 
     # image_path = "Qing Dataset/"
     # ocr_txt_output = "Qing Text Output/"
+
+    image_path = "Split Dataset/"
+    ocr_txt_output = "Split Text Output/"
 
     print("PIC Optical Character Recognition Process Ongoing...")
     print("Waiting...")
@@ -18,7 +21,7 @@ if __name__ == "__main__":
 
     cc = OpenCC('s2tw')
 
-    for i in range(0, 154):
+    for i in range(0, 64):
         textfile = image_ocr_match(image_path, i)
 
         for j in textfile:
