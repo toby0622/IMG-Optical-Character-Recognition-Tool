@@ -20,16 +20,17 @@ def image_ocr_match(image_path, counter_number):
     image = cv2.imread(actual_image_path, cv2.IMREAD_COLOR)
     gray_image = cv2.cvtColor(image, 7)
     # threshole_image = cv2.threshold(gray_image, 165, 255, cv2.THRESH_BINARY)[1]
-    inverted_image = cv2.threshold(gray_image, 110, 255, cv2.THRESH_BINARY_INV)[1]
+    inverted_image = cv2.threshold(gray_image, 100, 255, cv2.THRESH_BINARY_INV)[1]
 
     # OpenCV morphological transformation
     kernel = np.ones((2, 2), np.uint8)
     # opening_image = cv2.morphologyEx(inverted_image, cv2.MORPH_OPEN, kernel)
-    erode_image = cv2.erode(inverted_image, kernel, iterations=1)
+    # erode_image = cv2.erode(inverted_image, kernel, iterations=1)
+    dilation_image = cv2.dilate(inverted_image, kernel, iterations=1)
 
-    # cv2.imwrite('test.png', erode_image)
+    cv2.imwrite('Split Image Dataset/' + 'P' + str(counter_number) + '.png', dilation_image)
 
-    recognition_result = ocr_model.ocr(erode_image)
+    recognition_result = ocr_model.ocr(dilation_image)
 
     # result = recognition_result[0]
     #
