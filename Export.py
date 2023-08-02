@@ -14,8 +14,15 @@ def txt_export(datafile, output_folder, counter):
 def txt_export_total(datafile, output_folder):
     # process_start = datetime.datetime.now()  # process starting time
 
-    with open(output_folder + "SunHan" + ".txt", 'w', encoding='UTF-8') as textfile:
-        textfile.write(str(datafile))
+    text_file = open(output_folder + "SunHan" + ".txt", 'w', encoding='UTF-8')
+
+    # with open(output_folder + "SunHan" + ".txt", 'w', encoding='UTF-8') as textfile:
+    #     textfile.write(str(datafile))
+
+    for data in datafile:
+        text_file.write(str(data))
+
+    text_file.close()
 
     # process_finish = datetime.datetime.now()  # process finishing time
 

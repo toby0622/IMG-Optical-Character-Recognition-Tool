@@ -21,6 +21,7 @@ if __name__ == "__main__":
 
     cc = OpenCC('s2tw')
 
+    # total 383 images
     for i in range(0, 383):
         textfile = image_ocr_match(image_path, i)
 
