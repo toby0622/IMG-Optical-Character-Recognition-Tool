@@ -14,10 +14,8 @@ def image_ocr_match(image_path, counter_number):
     #                 cls_model_dir='../models/ch_ppocr_mobile_v2.0_cls_slim_infer/',
     #                 det_model_dir='../models/ch_PP-OCRv3_det_slim_infer/')
 
-    actual_image_path = image_path + "P" + str(counter_number) + ".jpg"
-
     # OpenCV threshold process
-    image = cv2.imread(actual_image_path, cv2.IMREAD_COLOR)
+    image = cv2.imread(image_path, cv2.IMREAD_COLOR)
     gray_image = cv2.cvtColor(image, 7)
     # threshole_image = cv2.threshold(gray_image, 165, 255, cv2.THRESH_BINARY)[1]
     inverted_image = cv2.threshold(gray_image, 100, 255, cv2.THRESH_BINARY_INV)[1]
@@ -43,6 +41,6 @@ def image_ocr_match(image_path, counter_number):
 
     process_finish = datetime.datetime.now()  # process finishing time
 
-    print('Page ' + str(counter_number + 1) + ' OCR Process Time =', (process_finish - process_start).seconds)
+    print('Page ' + str(counter_number) + ' OCR Process Time =', (process_finish - process_start).seconds)
 
     return data
