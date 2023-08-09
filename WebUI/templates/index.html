@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>IMG OCR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h3 class="text-muted">How to upload files</h3>
+        </div>
+        <hr/>
+        <div>
+            <form action="upload" method="post"
+             enctype="multipart/form-data">
+                <input type="file" multiple="" name="file[]"
+                 class="span3"><br/>
+                <input type="submit" value="Upload" class="span2">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
