@@ -2,7 +2,7 @@ from ocr import *
 from export import *
 from opencc import OpenCC
 
-
+"""
 if __name__ == "__main__":
     # image_path = "SunHan Dataset/"
     # ocr_txt_output = "SunHan Text Output/"
@@ -65,3 +65,4 @@ if __name__ == "__main__":
     #     counter += 1
 
     print("All Process Finished.\n")
+"""
