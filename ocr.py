@@ -7,7 +7,7 @@ import datetime
 def image_ocr_match(image_path, counter_number):
     process_start = datetime.datetime.now()  # process starting time
 
-    ocr_model = PaddleOCR(lang="ch", use_gpu=True, enable_mkldnn=True, cpu_threads=20)
+    ocr_model = PaddleOCR(lang="ch", use_gpu=True, enable_mkldnn=True, cpu_threads=12)
 
     # ocr = PaddleOCR(use_angle_cls=True,lang="ch",
     #                 rec_model_dir='../models/ch_PP-OCRv3_rec_slim_infer/',
@@ -26,7 +26,7 @@ def image_ocr_match(image_path, counter_number):
     # erode_image = cv2.erode(inverted_image, kernel, iterations=1)
     dilation_image = cv2.dilate(inverted_image, kernel, iterations=1)
 
-    cv2.imwrite('Split Image Dataset/' + 'P' + str(counter_number) + '.png', dilation_image)
+    cv2.imwrite('WebUI/opencv/' + 'P' + str(counter_number) + '.png', dilation_image)
 
     recognition_result = ocr_model.ocr(dilation_image)
 

@@ -58,7 +58,8 @@ def upload_file():
         uploaded_files = request.files.getlist("file[]")
         filenames = []
         ocr_results = []
-        ocr_final_result = []
+        ocr_list_result = []
+        ocr_final_result = str()
         counter = 1
 
     for file in uploaded_files:
@@ -72,15 +73,18 @@ def upload_file():
         for r in ocr_result:
             ocr_results.append(r)
 
-        # sorting using box x-axis, from right to left
+        # sorting using recognition box x-axis, from right to left
         ocr_results = sorted(ocr_results, key=lambda x: (x[0][1][0]), reverse=True)
 
         for o in ocr_results:
             cc.convert(str(o))
-            ocr_final_result.append(o[1][0])
+            ocr_list_result.append(o[1][0])
 
         ocr_results.clear()
         counter += 1
+
+    for f in ocr_list_result:
+        ocr_final_result = ocr_final_result + str(f)
 
     return render_template('result.html', filenames=filenames, ocr_final_result=ocr_final_result)
 
@@ -93,4 +97,6 @@ def uploaded_file(filename):
 if __name__ == "__main__":
     file_cleanup("upload")
     file_cleanup("download")
+    file_cleanup("opencv")
+
     app.run(debug=True, port=8000)

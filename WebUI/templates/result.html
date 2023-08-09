@@ -6,14 +6,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
+    <div class="pt-5"></div>
+
     <div class="container">
         <div class="header">
-            <h3 class="text-muted">Uploaded files</h3>
+            <h1 class="text-center">File Uploaded</h1>
         </div>
+
         <hr/>
+
         <div>
-            This is a list of the files you just uploaded, click on
-            them to load/download them
+            <p class="text-center">以下為所有上傳圖片之目錄</p>
+
             <ul>
                 {% for file in filenames %}
                 <li>
@@ -22,7 +26,10 @@
                 {% endfor %}
             </ul>
         </div>
+
         <div>
+            <p class="text-center">以下為文字識別之結果</p>
+
             <p>
                 {{ocr_final_result}}
             </p>
