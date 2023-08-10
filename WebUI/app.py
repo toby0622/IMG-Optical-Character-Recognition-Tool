@@ -1,6 +1,3 @@
-import os
-import shutil
-
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -11,6 +8,7 @@ from opencc import OpenCC
 
 from ocr import *
 from export import *
+from function import *
 
 
 app = Flask(__name__)
@@ -22,22 +20,6 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # 500MB limit for single upload
 app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
-
-
-# clean up the directory on the website startup
-def file_cleanup(directory):
-    folder = directory
-
-    for filename in os.listdir(folder):
-        file_path = os.path.join(folder, filename)
-
-        try:
-            if os.path.isfile(file_path) or os.path.islink(file_path):
-                os.unlink(file_path)
-            elif os.path.isdir(file_path):
-                shutil.rmtree(file_path)
-        except Exception as e:
-            print('Failed to delete %s. Reason: %s' % (file_path, e))
 
 
 # verify file extensions
@@ -94,6 +76,11 @@ def upload_file():
                            ocr_final_result=ocr_final_result)
 
 
+@app.route('/upload/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+
 @app.route('/download')
 def download_txt():
     return send_file(
@@ -101,11 +88,6 @@ def download_txt():
         mimetype='text/plain',
         download_name='result.txt',
         as_attachment=True)
-
-
-@app.route('/upload/<filename>')
-def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
 if __name__ == "__main__":
