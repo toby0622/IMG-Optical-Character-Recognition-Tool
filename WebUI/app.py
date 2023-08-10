@@ -4,8 +4,9 @@ import shutil
 from flask import Flask
 from flask import render_template
 from flask import request
-from werkzeug.utils import secure_filename
 from flask import send_from_directory
+from flask import send_file
+from werkzeug.utils import secure_filename
 from opencc import OpenCC
 
 from ocr import *
@@ -61,8 +62,6 @@ def upload_file():
         ocr_list_result = []
         ocr_final_result = str()
         counter = 1
-        image_number = len(uploaded_files)
-        image_number_modular = image_number % 7
 
     for file in uploaded_files:
         if file and allowed_file(file.filename):
@@ -88,11 +87,20 @@ def upload_file():
     for f in ocr_list_result:
         ocr_final_result = ocr_final_result + str(f)
 
+    txt_export_web(ocr_final_result)
+
     return render_template('result.html',
                            filenames=filenames,
-                           ocr_final_result=ocr_final_result,
-                           image_number=image_number,
-                           image_number_modular=image_number_modular)
+                           ocr_final_result=ocr_final_result)
+
+
+@app.route('/download')
+def download_txt():
+    return send_file(
+        'download/output.txt',
+        mimetype='text/plain',
+        download_name='result.txt',
+        as_attachment=True)
 
 
 @app.route('/upload/<filename>')
@@ -102,7 +110,5 @@ def uploaded_file(filename):
 
 if __name__ == "__main__":
     file_cleanup("upload")
-    file_cleanup("download")
-    file_cleanup("opencv")
 
     app.run(debug=True, port=8000)
