@@ -6,21 +6,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                <h5 class="pt-1">Image Optical Character Recognition Web Interface</h5>
+            </a>
+        </div>
+    </nav>
+
     <div class="pt-5"></div>
 
     <div class="container">
         <div class="header">
-            <h1 class="text-center">File Uploaded</h1>
+            <h1 class="text-center pt-3">File Uploaded</h1>
         </div>
 
         <hr/>
 
         <div>
-            <p class="text-center">以下為所有上傳圖片之目錄</p>
-
+            <p class="text-center pt-3">Uploaded Image(s)</p>
             <ul>
                 {% for file in filenames %}
-                <li>
+                <li style="display:inline">
                     <a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a>
                 </li>
                 {% endfor %}
@@ -28,12 +36,18 @@
         </div>
 
         <div>
-            <p class="text-center">以下為文字識別之結果</p>
+            <p class="text-center pt-3">Optical Character Recognition Result(s)</p>
 
             <p>
                 {{ocr_final_result}}
             </p>
         </div>
     </div>
+
+    <footer class="bg-secondary text-center text-white fixed-bottom">
+        <div class="text-center p-3">
+            © Artificial Intelligence Driven OCR. MIAT LAB, NCU.
+        </div>
+    </footer>
 </body>
 </html>

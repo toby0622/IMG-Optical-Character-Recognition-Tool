@@ -61,6 +61,8 @@ def upload_file():
         ocr_list_result = []
         ocr_final_result = str()
         counter = 1
+        image_number = len(uploaded_files)
+        image_number_modular = image_number % 7
 
     for file in uploaded_files:
         if file and allowed_file(file.filename):
@@ -86,7 +88,11 @@ def upload_file():
     for f in ocr_list_result:
         ocr_final_result = ocr_final_result + str(f)
 
-    return render_template('result.html', filenames=filenames, ocr_final_result=ocr_final_result)
+    return render_template('result.html',
+                           filenames=filenames,
+                           ocr_final_result=ocr_final_result,
+                           image_number=image_number,
+                           image_number_modular=image_number_modular)
 
 
 @app.route('/upload/<filename>')
