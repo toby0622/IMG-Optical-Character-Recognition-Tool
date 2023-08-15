@@ -118,8 +118,6 @@ def upload_file_2():
         ocr_results = []
         ocr_list_result = []
         ocr_final_result = str()
-        counter = 1
-        total_pdf = len(uploaded_files)
 
     for file in uploaded_files:
         if file and allowed_file_pdf(file.filename):
@@ -139,9 +137,11 @@ def upload_file_2():
             mat = fitz.Matrix(zoom_x, zoom_y).prerotate(rotate)
             pix = page.get_pixmap(matrix=mat, alpha=False)
 
-            pix.save(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg) + '.png'))
+            pix.save(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg + 1) + '.png'))
 
-            ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg) + '.png'), pg)
+            ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg + 1) + '.png'), pg)
+
+            progress_bar_calculation(pg + 1, page_number)
 
             for r in ocr_result:
                 ocr_results.append(r)
@@ -151,10 +151,6 @@ def upload_file_2():
             ocr_list_result.append(o[1][0])
 
         ocr_results.clear()
-
-        progress_bar_calculation(counter, total_pdf)
-
-        counter += 1
 
     for f in ocr_list_result:
         ocr_final_result = ocr_final_result + str(f)
