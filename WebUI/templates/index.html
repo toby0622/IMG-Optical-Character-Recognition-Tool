@@ -20,17 +20,27 @@
             <h1 class="text-center pt-5">IMG OCR TOOL</h1>
         </div>
 
-        <hr/>
+                <hr/>
 
         <div>
-            <p class="text-center pt-3">Please Upload The Image File Below</p>
+            <p class="text-center pt-3">Please Upload The File Below</p>
         </div>
 
         <div>
-            <form class="form-inline pt-3 text-center" action="upload" method="post" enctype="multipart/form-data">
-                <input class="form-control" type="file" multiple="" name="file[]">
+            <form class="form-inline pt-3 text-center" action="uploadimg" method="post" enctype="multipart/form-data">
+                <input class="form-control" type="file" multiple="" name="file1[]">
                 <br/>
-                <input class="form-control btn btn-primary" type="submit" value="Upload">
+                <input class="form-control btn btn-primary" type="submit" value="IMG Upload">
+            </form>
+        </div>
+
+        <div class="pt-3"></div>
+
+        <div>
+            <form class="form-inline pt-3 text-center" action="uploadpdf" method="post" enctype="multipart/form-data">
+                <input class="form-control" type="file" multiple="" name="file2[]">
+                <br/>
+                <input class="form-control btn btn-primary" type="submit" value="PDF Upload">
             </form>
         </div>
 

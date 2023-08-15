@@ -1,4 +1,5 @@
 import time
+import fitz # pip install PyMuPDF
 
 from flask import Flask
 from flask import render_template
@@ -18,20 +19,28 @@ from function import *
 app = Flask(__name__)
 
 # file storage
-UPLOAD_FOLDER = 'upload'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+UPLOAD_FOLDER_IMG = 'uploadimg'
+UPLOAD_FOLDER_PDF = 'uploadpdf'
+ALLOWED_EXTENSIONS_IMG = {'png', 'jpg', 'jpeg'}
+ALLOWED_EXTENSIONS_PDF = {'pdf'}
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-# 500MB limit for single upload
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER_IMG
+app.config['UPLOAD_FOLDER_2'] = UPLOAD_FOLDER_PDF
+# 500MB limit for single uploadimg
 app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
 
 progress_bar_ratio = 0
 
 
 # verify file extensions
-def allowed_file(filename):
+def allowed_file_img(filename):
     return '.' in filename and \
-        filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+        filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS_IMG
+
+
+def allowed_file_pdf(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS_PDF
 
 
 # dynamic progress bar
@@ -52,12 +61,12 @@ def index():
     return render_template('index.html', template_folder='./')
 
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/uploadimg', methods=['GET', 'POST'])
 def upload_file():
     cc = OpenCC('s2tw')
 
     if request.method == 'POST':
-        uploaded_files = request.files.getlist("file[]")
+        uploaded_files = request.files.getlist("file1[]")
         filenames = []
         ocr_results = []
         ocr_list_result = []
@@ -66,7 +75,7 @@ def upload_file():
         total_images = len(uploaded_files)
 
     for file in uploaded_files:
-        if file and allowed_file(file.filename):
+        if file and allowed_file_img(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             filenames.append(filename)
@@ -99,9 +108,72 @@ def upload_file():
                            ocr_final_result=ocr_final_result)
 
 
-@app.route('/upload/<filename>')
+@app.route('/uploadpdf', methods=['GET', 'POST'])
+def upload_file_2():
+    cc = OpenCC('s2tw')
+
+    if request.method == 'POST':
+        uploaded_files = request.files.getlist("file2[]")
+        filenames = []
+        ocr_results = []
+        ocr_list_result = []
+        ocr_final_result = str()
+        counter = 1
+        total_pdf = len(uploaded_files)
+
+    for file in uploaded_files:
+        if file and allowed_file_pdf(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER_2'], filename))
+            filenames.append(filename)
+
+        pdf_doc = fitz.open(os.path.join(app.config['UPLOAD_FOLDER_2'], filename))
+        page_number = pdf_doc.page_count
+
+        for pg in range(0, page_number):
+            page = pdf_doc[pg]
+            rotate = int(0)  # no rotation
+            # default A4 portrait = 595 x 842
+            zoom_x = 8  # horizontal
+            zoom_y = 8  # vertical
+            mat = fitz.Matrix(zoom_x, zoom_y).prerotate(rotate)
+            pix = page.get_pixmap(matrix=mat, alpha=False)
+
+            pix.save(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg) + '.png'))
+
+            ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg) + '.png'), pg)
+
+            for r in ocr_result:
+                ocr_results.append(r)
+
+        for o in ocr_results:
+            cc.convert(str(o))
+            ocr_list_result.append(o[1][0])
+
+        ocr_results.clear()
+
+        progress_bar_calculation(counter, total_pdf)
+
+        counter += 1
+
+    for f in ocr_list_result:
+        ocr_final_result = ocr_final_result + str(f)
+
+    txt_export_web(ocr_final_result)
+
+    return render_template('result.html',
+                           filenames=filenames,
+                           ocr_final_result=ocr_final_result)
+
+
+@app.route('/uploadimg/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+
+@app.route('/uploadpdf/<filename>')
+def uploaded_file_2(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER_2'], filename)
 
 
 @app.route('/download')
@@ -130,6 +202,7 @@ def progress():
 
 
 if __name__ == "__main__":
-    file_cleanup("upload")
+    file_cleanup("uploadimg")
+    file_cleanup("uploadpdf")
 
     app.run(debug=True, port=8000)
