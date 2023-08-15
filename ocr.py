@@ -7,12 +7,12 @@ import datetime
 def image_ocr_match(image_path, counter_number):
     process_start = datetime.datetime.now()  # process starting time
 
-    ocr_model = PaddleOCR(lang="ch", use_gpu=True, enable_mkldnn=True)
+    # ocr_model = PaddleOCR(lang="ch", use_gpu=True, enable_mkldnn=True)
 
-    # ocr_model = PaddleOCR(use_angle_cls=True, lang="ch", use_gpu=True, enable_mkldnn=True,
-    #                 rec_model_dir='Models/ch_PP-OCRv3_rec_infer.tar',
-    #                 cls_model_dir='Models/ch_ppocr_mobile_v2.0_cls_infer.tar',
-    #                 det_model_dir='Models/ch_PP-OCRv3_det_infer.tar')
+    ocr_model = PaddleOCR(use_angle_cls=True, lang="ch", use_gpu=True, enable_mkldnn=True,
+                    rec_model_dir='models/ch_PP-OCRv3_rec_infer.tar',
+                    cls_model_dir='models/ch_ppocr_mobile_v2.0_cls_infer.tar',
+                    det_model_dir='models/ch_PP-OCRv3_det_infer.tar')
 
     # OpenCV threshold process
     image = cv2.imread(image_path, cv2.IMREAD_COLOR)
@@ -26,7 +26,7 @@ def image_ocr_match(image_path, counter_number):
     # erode_image = cv2.erode(inverted_image, kernel, iterations=1)
     dilation_image = cv2.dilate(inverted_image, kernel, iterations=1)
 
-    cv2.imwrite('WebUI/opencv/' + 'P' + str(counter_number) + '.png', dilation_image)
+    # cv2.imwrite('WebUI/opencv/' + 'P' + str(counter_number) + '.png', dilation_image)
 
     recognition_result = ocr_model.ocr(dilation_image)
 

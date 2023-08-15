@@ -1,13 +1,7 @@
 import time
-import fitz # pip install PyMuPDF
+import fitz  # pip install PyMuPDF, not fitz
 
-from flask import Flask
-from flask import render_template
-from flask import request
-from flask import send_from_directory
-from flask import send_file
-from flask import Response
-from flask import stream_with_context
+from flask import *
 from werkzeug.utils import secure_filename
 from opencc import OpenCC
 
@@ -28,8 +22,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER_IMG
 app.config['UPLOAD_FOLDER_2'] = UPLOAD_FOLDER_PDF
 # 500MB limit for single uploadimg
 app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
-
-progress_bar_ratio = 0
+app.secret_key = "NCU_MIAT_LAB"
 
 
 # verify file extensions
@@ -41,19 +34,6 @@ def allowed_file_img(filename):
 def allowed_file_pdf(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS_PDF
-
-
-# dynamic progress bar
-def progress_bar_calculation(current_images, total_images):
-    global progress_bar_ratio
-    progress_bar_ratio = current_images / float(total_images)
-    progress_bar_ratio = int(round(progress_bar_ratio, 2) * 100)
-
-
-# value getter for JavaScript
-def get_bar_ratio():
-    global progress_bar_ratio
-    return progress_bar_ratio
 
 
 @app.route('/')
@@ -79,6 +59,8 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             filenames.append(filename)
+        else:
+            return redirect(url_for("index"))
 
         ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], filename), counter)
 
@@ -124,6 +106,8 @@ def upload_file_2():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER_2'], filename))
             filenames.append(filename)
+        else:
+            return redirect(url_for("index"))
 
         pdf_doc = fitz.open(os.path.join(app.config['UPLOAD_FOLDER_2'], filename))
         page_number = pdf_doc.page_count
@@ -139,7 +123,7 @@ def upload_file_2():
 
             pix.save(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg + 1) + '.png'))
 
-            ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg + 1) + '.png'), pg)
+            ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], 'P' + str(pg + 1) + '.png'), pg + 1)
 
             progress_bar_calculation(pg + 1, page_number)
 
