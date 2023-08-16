@@ -24,6 +24,7 @@ def file_cleanup(directory):
 # dynamic progress bar
 def progress_bar_calculation(current_images, total_images):
     global progress_bar_ratio
+
     progress_bar_ratio = current_images / float(total_images)
     progress_bar_ratio = int(round(progress_bar_ratio, 2) * 100)
 
@@ -32,3 +33,10 @@ def progress_bar_calculation(current_images, total_images):
 def get_bar_ratio():
     global progress_bar_ratio
     return progress_bar_ratio
+
+
+def written_right_to_left(ocr_results):
+    # sorting using recognition box x-axis, from right to left
+    ocr_results = sorted(ocr_results, key=lambda x: (x[0][1][0]), reverse=True)
+
+    return ocr_results

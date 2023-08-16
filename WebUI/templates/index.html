@@ -19,10 +19,13 @@
             <h1 class="text-center pt-5">IMG OCR TOOL</h1>
         </div>
 
-                <hr/>
+        <hr/>
 
-        <div>
-            <p class="text-center pt-3">Please Upload The File Below</p>
+        <div class="pt-3"></div>
+
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="chinese_vertical">
+            <label class="form-check-label" for="chinese_vertical">Special Format &#128073 Chinese Vertical Writing</label>
         </div>
 
         <div>
@@ -68,6 +71,18 @@
                   source.close()
               }
         }
+    </script>
+
+    <script>
+        var chineseVertical = document.getElementById("chinese_vertical");
+
+        chineseVertical.addEventListener("change", function (event) {
+            if (event.target.checked) {
+                console.log("Checked");
+            } else {
+                console.log("Not checked");
+            }
+        });
     </script>
 
     <footer class="bg-secondary text-center text-white fixed-bottom">

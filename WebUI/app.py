@@ -67,8 +67,8 @@ def upload_file():
         for r in ocr_result:
             ocr_results.append(r)
 
-        # sorting using recognition box x-axis, from right to left
-        ocr_results = sorted(ocr_results, key=lambda x: (x[0][1][0]), reverse=True)
+        # if toggle == 1:
+        #     ocr_results = written_right_to_left(ocr_results)
 
         for o in ocr_results:
             cc.convert(str(o))
