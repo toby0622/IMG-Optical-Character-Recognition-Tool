@@ -18,6 +18,8 @@ UPLOAD_FOLDER_PDF = 'uploadpdf'
 ALLOWED_EXTENSIONS_IMG = {'png', 'jpg', 'jpeg'}
 ALLOWED_EXTENSIONS_PDF = {'pdf'}
 
+REVERSE_TOGGLE = False
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER_IMG
 app.config['UPLOAD_FOLDER_2'] = UPLOAD_FOLDER_PDF
 # 500MB limit for single uploadimg
@@ -38,11 +40,34 @@ def allowed_file_pdf(filename):
 
 @app.route('/')
 def index():
+    file_cleanup("uploadimg")
+    file_cleanup("uploadpdf")
+
     return render_template('index.html', template_folder='./')
+
+
+@app.route('/chinesevertical', methods=['GET', 'POST'])
+def chinese_vertical():
+    global REVERSE_TOGGLE
+
+    if request.method == 'POST':
+        conditional_flag = request.form
+        # print(conditional_flag['conditionalFlag'])
+
+        if int(conditional_flag['conditionalFlag']) == 1:
+            REVERSE_TOGGLE = True
+        else:
+            REVERSE_TOGGLE = False
+
+    # print(CHINESE_VERTICAL_TOGGLE)
+
+    return render_template('index.html')
 
 
 @app.route('/uploadimg', methods=['GET', 'POST'])
 def upload_file():
+    global REVERSE_TOGGLE
+
     cc = OpenCC('s2tw')
 
     if request.method == 'POST':
@@ -67,8 +92,11 @@ def upload_file():
         for r in ocr_result:
             ocr_results.append(r)
 
-        # if toggle == 1:
-        #     ocr_results = written_right_to_left(ocr_results)
+        # chinese vertical written form
+        if REVERSE_TOGGLE:
+            ocr_results = written_reverse(ocr_results)
+        else:
+            ocr_results = written_default(ocr_results)
 
         for o in ocr_results:
             cc.convert(str(o))
@@ -92,6 +120,8 @@ def upload_file():
 
 @app.route('/uploadpdf', methods=['GET', 'POST'])
 def upload_file_2():
+    global REVERSE_TOGGLE
+
     cc = OpenCC('s2tw')
 
     if request.method == 'POST':
@@ -129,6 +159,12 @@ def upload_file_2():
 
             for r in ocr_result:
                 ocr_results.append(r)
+
+            # chinese vertical written form
+            if REVERSE_TOGGLE:
+                ocr_results = written_reverse(ocr_results)
+            else:
+                ocr_results = written_default(ocr_results)
 
         for o in ocr_results:
             cc.convert(str(o))
@@ -182,7 +218,4 @@ def progress():
 
 
 if __name__ == "__main__":
-    file_cleanup("uploadimg")
-    file_cleanup("uploadpdf")
-
     app.run(debug=True, port=8000)

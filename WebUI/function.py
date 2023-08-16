@@ -35,7 +35,16 @@ def get_bar_ratio():
     return progress_bar_ratio
 
 
-def written_right_to_left(ocr_results):
+# need to be revised for higher versatility
+def written_default(ocr_results):
+    # sorting using recognition box x-axis, from left to right
+    ocr_results = sorted(ocr_results, key=lambda x: (x[0][1][0]), reverse=False)
+
+    return ocr_results
+
+
+# need to be revised for higher versatility
+def written_reverse(ocr_results):
     # sorting using recognition box x-axis, from right to left
     ocr_results = sorted(ocr_results, key=lambda x: (x[0][1][0]), reverse=True)
 
