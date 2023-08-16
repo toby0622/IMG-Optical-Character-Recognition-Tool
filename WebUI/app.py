@@ -68,7 +68,7 @@ def chinese_vertical():
 def upload_file():
     global REVERSE_TOGGLE
 
-    cc = OpenCC('s2tw')
+    cc = OpenCC('s2twp')
 
     if request.method == 'POST':
         uploaded_files = request.files.getlist("file1[]")
@@ -99,8 +99,8 @@ def upload_file():
             ocr_results = written_default(ocr_results)
 
         for o in ocr_results:
-            cc.convert(str(o))
-            ocr_list_result.append(o[1][0])
+            s2t = cc.convert(str(o[1][0]))
+            ocr_list_result.append(s2t)
 
         ocr_results.clear()
 
@@ -122,7 +122,7 @@ def upload_file():
 def upload_file_2():
     global REVERSE_TOGGLE
 
-    cc = OpenCC('s2tw')
+    cc = OpenCC('s2twp')
 
     if request.method == 'POST':
         uploaded_files = request.files.getlist("file2[]")
@@ -167,8 +167,8 @@ def upload_file_2():
                 ocr_results = written_default(ocr_results)
 
         for o in ocr_results:
-            cc.convert(str(o))
-            ocr_list_result.append(o[1][0])
+            s2t = cc.convert(str(o[1][0]))
+            ocr_list_result.append(s2t)
 
         ocr_results.clear()
 
