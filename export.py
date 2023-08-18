@@ -18,6 +18,22 @@ def txt_export_web(datafile):
     # process_finish = datetime.datetime.now()  # process finishing time
 
 
+def json_export_web(datafile):
+    # process_start = datetime.datetime.now()  # process starting time
+
+    storage_path = "C:/Users/toby0/Documents/GitHub/IMG-Optical-Character-Recognition-Tool/WebUI/download/output.json"
+
+    text_file = open(storage_path, 'w', encoding='UTF-8')
+
+    # with open(output_folder + "SunHan" + ".txt", 'w', encoding='UTF-8') as textfile:
+    #     textfile.write(str(datafile))
+
+    text_file.write(datafile)
+    text_file.close()
+
+    # process_finish = datetime.datetime.now()  # process finishing time
+
+
 def txt_export_total(datafile, output_folder):
     # process_start = datetime.datetime.now()  # process starting time
 

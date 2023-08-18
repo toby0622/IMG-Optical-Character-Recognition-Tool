@@ -1,5 +1,6 @@
 import time
 import fitz  # pip install PyMuPDF, not fitz
+import json
 
 from flask import *
 from werkzeug.utils import secure_filename
@@ -8,7 +9,6 @@ from opencc import OpenCC
 from ocr import *
 from export import *
 from function import *
-
 
 app = Flask(__name__)
 
@@ -102,8 +102,6 @@ def upload_file():
             s2t = cc.convert(str(o[1][0]))
             ocr_list_result.append(s2t)
 
-        ocr_results.clear()
-
         progress_bar_calculation(counter, total_images)
 
         counter += 1
@@ -111,7 +109,13 @@ def upload_file():
     for f in ocr_list_result:
         ocr_final_result = ocr_final_result + str(f)
 
+    ocr_json = json.dumps(ocr_list_result)
+
     txt_export_web(ocr_final_result)
+    json_export_web(ocr_json)
+
+    ocr_results.clear()
+    ocr_list_result.clear()
 
     return render_template('result.html',
                            filenames=filenames,
@@ -170,34 +174,37 @@ def upload_file_2():
             s2t = cc.convert(str(o[1][0]))
             ocr_list_result.append(s2t)
 
-        ocr_results.clear()
-
     for f in ocr_list_result:
         ocr_final_result = ocr_final_result + str(f)
 
+    ocr_json = json.dumps(ocr_list_result)
+
     txt_export_web(ocr_final_result)
+    json_export_web(ocr_json)
+
+    ocr_results.clear()
+    ocr_list_result.clear()
 
     return render_template('result.html',
                            filenames=filenames,
                            ocr_final_result=ocr_final_result)
 
 
-@app.route('/uploadimg/<filename>')
-def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
-
-
-@app.route('/uploadpdf/<filename>')
-def uploaded_file_2(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER_2'], filename)
-
-
-@app.route('/download')
+@app.route('/downloadtxt')
 def download_txt():
     return send_file(
         'download/output.txt',
         mimetype='text/plain',
         download_name='result.txt',
+        as_attachment=True)
+
+
+@app.route('/downloadjson')
+def download_json():
+    return send_file(
+        'download/output.json',
+        mimetype='application/json',
+        download_name='result.json',
         as_attachment=True)
 
 
