@@ -109,7 +109,9 @@ def upload_file():
     for f in ocr_list_result:
         ocr_final_result = ocr_final_result + str(f)
 
-    ocr_json = json.dumps(ocr_list_result)
+    ocr_json = json.dumps({
+        'result': ocr_final_result
+    })
 
     txt_export_web(ocr_final_result)
     json_export_web(ocr_json)
@@ -177,7 +179,9 @@ def upload_file_2():
     for f in ocr_list_result:
         ocr_final_result = ocr_final_result + str(f)
 
-    ocr_json = json.dumps(ocr_list_result)
+    ocr_json = json.dumps({
+        'result': ocr_final_result
+    })
 
     txt_export_web(ocr_final_result)
     json_export_web(ocr_json)
