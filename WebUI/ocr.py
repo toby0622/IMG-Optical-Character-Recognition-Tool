@@ -9,7 +9,7 @@ def image_ocr_match(image_path, counter_number):
 
     ocr_model = PaddleOCR(use_angle_cls=True, lang="ch",
                           use_gpu=True, enable_mkldnn=True,
-                          ocr_version="PP-OCRv3",
+                          ocr_version="PP-OCRv4",
                           det_model_dir="models/det",
                           cls_model_dir="models/cls",
                           rec_model_dir="models/rec")
