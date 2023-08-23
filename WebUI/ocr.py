@@ -7,12 +7,12 @@ import datetime
 def image_ocr_match(image_path, counter_number):
     process_start = datetime.datetime.now()  # process starting time
 
-    # ocr_model = PaddleOCR(lang="ch", use_gpu=True, enable_mkldnn=True)
-
-    ocr_model = PaddleOCR(use_angle_cls=True, lang="ch", use_gpu=True, enable_mkldnn=True,
-                    rec_model_dir='models/ch_PP-OCRv4_rec_infer.tar',
-                    cls_model_dir='models/ch_ppocr_mobile_v2.0_cls_infer.tar',
-                    det_model_dir='models/ch_PP-OCRv4_det_infer.tar')
+    ocr_model = PaddleOCR(use_angle_cls=True, lang="ch",
+                          use_gpu=True, enable_mkldnn=True,
+                          ocr_version="PP-OCRv3",
+                          det_model_dir="models/det",
+                          cls_model_dir="models/cls",
+                          rec_model_dir="models/rec")
 
     # OpenCV threshold process
     image = cv2.imread(image_path, cv2.IMREAD_COLOR)
