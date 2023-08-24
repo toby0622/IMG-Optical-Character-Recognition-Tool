@@ -1,2 +1,4 @@
+if want to use server version of model, modify the link in the paddleocr.py (in lib, site package folder)
+
 https://paddleocr.bj.bcebos.com/PP-OCRv4/chinese/ch_PP-OCRv4_rec_server_infer.tar
 https://paddleocr.bj.bcebos.com/PP-OCRv4/chinese/ch_PP-OCRv4_det_server_infer.tar
