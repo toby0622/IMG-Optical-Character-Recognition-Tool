@@ -18,7 +18,7 @@ def image_ocr_match(image_path, counter_number):
     image = cv2.imread(image_path, cv2.IMREAD_COLOR)
     gray_image = cv2.cvtColor(image, 7)
     # threshole_image = cv2.threshold(gray_image, 165, 255, cv2.THRESH_BINARY)[1]
-    inverted_image = cv2.threshold(gray_image, 100, 255, cv2.THRESH_BINARY_INV)[1]
+    inverted_image = cv2.threshold(gray_image, 90, 255, cv2.THRESH_BINARY_INV)[1]
 
     # OpenCV morphological transformation
     kernel = np.ones((2, 2), np.uint8)

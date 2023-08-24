@@ -72,9 +72,7 @@ def upload_file():
 
     if request.method == 'POST':
         uploaded_files = request.files.getlist("file1[]")
-        filenames = []
-        ocr_results = []
-        ocr_list_result = []
+        list_result = []
         ocr_final_result = str("")
         counter = 1
         total_images = len(uploaded_files)
@@ -83,31 +81,25 @@ def upload_file():
         if file and allowed_file_img(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            filenames.append(filename)
         else:
             return redirect(url_for("index"))
 
         ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], filename), counter)
 
-        for r in ocr_result:
-            ocr_results.append(r)
-
         # chinese vertical written form
         if REVERSE_TOGGLE:
-            ocr_results = written_reverse(ocr_results)
+            ocr_result = written_reverse(ocr_result)
         else:
-            ocr_results = written_default(ocr_results)
+            ocr_result = written_default(ocr_result)
 
-        for o in ocr_results:
-            s2t = cc.convert(str(o[1][0]))
-            ocr_list_result.append(s2t)
+        for r in ocr_result:
+            s2t = cc.convert(str(r[1][0]))
+            list_result.append(s2t)
+            ocr_final_result = ocr_final_result + str(s2t)
 
         progress_bar_calculation(counter, total_images)
 
         counter += 1
-
-    for f in ocr_list_result:
-        ocr_final_result = ocr_final_result + str(f)
 
     ocr_json = json.dumps(
         dict(result=ocr_final_result),
@@ -117,7 +109,6 @@ def upload_file():
     json_export_web(ocr_json)
 
     return render_template('result.html',
-                           filenames=filenames,
                            ocr_final_result=ocr_final_result)
 
 
@@ -129,16 +120,13 @@ def upload_file_2():
 
     if request.method == 'POST':
         uploaded_files = request.files.getlist("file2[]")
-        filenames = []
-        ocr_results = []
-        ocr_list_result = []
+        list_result = []
         ocr_final_result = str()
 
     for file in uploaded_files:
         if file and allowed_file_pdf(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER_2'], filename))
-            filenames.append(filename)
         else:
             return redirect(url_for("index"))
 
@@ -160,21 +148,16 @@ def upload_file_2():
 
             progress_bar_calculation(pg + 1, page_number)
 
-            for r in ocr_result:
-                ocr_results.append(r)
-
             # chinese vertical written form
             if REVERSE_TOGGLE:
-                ocr_results = written_reverse(ocr_results)
+                ocr_result = written_reverse(ocr_result)
             else:
-                ocr_results = written_default(ocr_results)
+                ocr_result = written_default(ocr_result)
 
-        for o in ocr_results:
-            s2t = cc.convert(str(o[1][0]))
-            ocr_list_result.append(s2t)
-
-    for f in ocr_list_result:
-        ocr_final_result = ocr_final_result + str(f)
+            for r in ocr_result:
+                s2t = cc.convert(str(r[1][0]))
+                list_result.append(s2t)
+                ocr_final_result = ocr_final_result + str(s2t)
 
     ocr_json = json.dumps(
         dict(result=ocr_final_result),
@@ -184,7 +167,6 @@ def upload_file_2():
     json_export_web(ocr_json)
 
     return render_template('result.html',
-                           filenames=filenames,
                            ocr_final_result=ocr_final_result)
 
 
@@ -223,4 +205,4 @@ def progress():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=9487)
+    app.run(host="0.0.0.0", debug=True, port=9487)
