@@ -1,5 +1,6 @@
 import os
 import shutil
+import re
 
 
 progress_bar_ratio = 0
@@ -46,3 +47,18 @@ def written_reverse(ocr_results):
     ocr_results = sorted(ocr_results, key=lambda x: (x[0][1][0]), reverse=True)
 
     return ocr_results
+
+
+def remove_special_characters(text):
+    # english characters
+    # text = re.sub('[\u0040-\u007E\uFF20-\uFF60]', r'', text)
+
+    # punctuation marks
+    text = re.sub('[\uFF5E\uFF03-\uFF06\uFF08\uFF09\uFF1C-\uFF1E]', r'', text)
+
+    # numbers
+    # text = re.sub('[\u0030-\u0039\uFF10-\uFF19]', r'', text)
+
+    text = re.sub('[~#$%&()<=>\"]', r'', text)
+
+    return text

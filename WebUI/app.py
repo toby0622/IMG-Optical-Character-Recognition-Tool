@@ -101,8 +101,10 @@ def upload_file():
 
         counter += 1
 
+    ocr_final_result = remove_special_characters(ocr_final_result)
+
     ocr_json = json.dumps(
-        dict(result=ocr_final_result),
+        dict(text=ocr_final_result),
         ensure_ascii=False)
 
     txt_export_web(ocr_final_result)
@@ -159,8 +161,10 @@ def upload_file_2():
                 list_result.append(s2t)
                 ocr_final_result = ocr_final_result + str(s2t)
 
+    ocr_final_result = remove_special_characters(ocr_final_result)
+
     ocr_json = json.dumps(
-        dict(result=ocr_final_result),
+        dict(text=ocr_final_result),
         ensure_ascii=False)
 
     txt_export_web(ocr_final_result)
