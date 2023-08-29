@@ -15,6 +15,7 @@ app = Flask(__name__)
 # file storage
 UPLOAD_FOLDER_IMG = 'uploadimg'
 UPLOAD_FOLDER_PDF = 'uploadpdf'
+VISUALIZATION = 'static'
 ALLOWED_EXTENSIONS_IMG = {'png', 'jpg', 'jpeg'}
 ALLOWED_EXTENSIONS_PDF = {'pdf'}
 
@@ -22,6 +23,8 @@ REVERSE_TOGGLE = False
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER_IMG
 app.config['UPLOAD_FOLDER_2'] = UPLOAD_FOLDER_PDF
+app.config['VISUALIZATION'] = VISUALIZATION
+
 # 500MB limit for single uploadimg
 app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
 app.secret_key = "NCU_MIAT_LAB"

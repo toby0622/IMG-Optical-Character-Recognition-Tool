@@ -27,7 +27,7 @@
         <div>
             <p class="text-center pt-3">Optical Character Recognition Result(s)</p>
 
-            <div style="height: 300px; overflow-y:auto;">
+            <div style="height: 200px; overflow-y:auto;">
                 <p>
                     {{ocr_final_result}}
                 </p>
@@ -35,13 +35,21 @@
         </div>
     </div>
 
-    <div class="pt-4 text-center">
+    <div class="container">
+        <p class="text-center pt-3">Optical Character Recognition Visualization</p>
+
+        <hr/>
+
+        <img src="{{url_for('static', filename='result.jpg')}}" alt="Result">
+    </div>
+
+    <div class="text-center pt-3 pb-3">
         <a href="{{url_for('download_txt')}}" type="button" class="btn btn-success text-center">Download TXT</a>
         <a href="{{url_for('download_json')}}" type="button" class="btn btn-primary text-center">Download JSON</a>
         <a href="{{url_for('index')}}" type="button" class="btn btn-danger text-center">New Process</a>
     </div>
 
-    <footer class="bg-secondary text-center text-white fixed-bottom pt-3">
+    <footer class="bg-secondary text-center text-white pt-3">
         <div class="text-center p-3">
             © Artificial Intelligence Driven OCR. MIAT LAB, NCU.
         </div>

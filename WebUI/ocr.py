@@ -44,14 +44,14 @@ def image_ocr_match(image_path, counter_number):
 
     data = recognition_result[0]
 
-    # result visualization
+    # result static
     visual = Image.open(image_path).convert('RGB')
     rec_boxes = [line[0] for line in data]
     rec_texts = [cc.convert(str(line[1][0])) for line in data]
     probability = [line[1][1] for line in data]
     im_show = draw_ocr(visual, rec_boxes, rec_texts, probability, font_path='font/Yozai-Regular.ttf')
     im_show = Image.fromarray(im_show)
-    im_show.save('visual/result.jpg')
+    im_show.save('static/result.jpg')
 
     process_finish = datetime.datetime.now()  # process finishing time
 
