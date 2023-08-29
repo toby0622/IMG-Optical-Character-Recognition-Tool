@@ -15,8 +15,6 @@
         </div>
     </nav>
 
-    <div class="pt-5"></div>
-
     <div class="container">
         <div class="header">
             <h1 class="text-center pt-3">File Uploaded</h1>
@@ -24,23 +22,21 @@
 
         <hr/>
 
-        <div>
-            <p class="text-center pt-3">Optical Character Recognition Result(s)</p>
+        <div class="pt-3" style="text-align: center">
+            <p>Optical Character Recognition Visualization</p>
 
-            <div style="height: 200px; overflow-y:auto;">
-                <p>
-                    {{ocr_final_result}}
-                </p>
-            </div>
+            <img src="{{url_for('static', filename='result.jpg')}}" alt="Result">
         </div>
-    </div>
-
-    <div class="container">
-        <p class="text-center pt-3">Optical Character Recognition Visualization</p>
 
         <hr/>
 
-        <img src="{{url_for('static', filename='result.jpg')}}" alt="Result">
+        <div>
+            <p class="text-center pt-3">Optical Character Recognition Result(s)</p>
+
+            <textarea readonly rows="7" style="width: 100%; background-color: #edede9; border-radius: 5px">
+                {{ocr_final_result}}
+            </textarea>
+        </div>
     </div>
 
     <div class="text-center pt-3 pb-3">
@@ -49,7 +45,7 @@
         <a href="{{url_for('index')}}" type="button" class="btn btn-danger text-center">New Process</a>
     </div>
 
-    <footer class="bg-secondary text-center text-white pt-3">
+    <footer class="bg-secondary text-center text-white pt-2">
         <div class="text-center p-3">
             © Artificial Intelligence Driven OCR. MIAT LAB, NCU.
         </div>
