@@ -1,5 +1,7 @@
 import numpy as np
 from paddleocr import PaddleOCR
+from paddleocr import draw_ocr
+from PIL import Image
 import cv2
 import datetime
 
@@ -38,6 +40,15 @@ def image_ocr_match(image_path, counter_number):
     #     print(result[1][0])
 
     data = recognition_result[0]
+
+    # result visualization
+    visual = Image.open(image_path).convert('RGB')
+    rec_boxes = [line[0] for line in data]
+    rec_texts = [line[1][0] for line in data]
+    probability = [line[1][1] for line in data]
+    im_show = draw_ocr(visual, rec_boxes, rec_texts, probability, font_path='font/ChenYuluoyan-Thin-Monospaced.ttf')
+    im_show = Image.fromarray(im_show)
+    im_show.save('visual/result.jpg')
 
     process_finish = datetime.datetime.now()  # process finishing time
 
