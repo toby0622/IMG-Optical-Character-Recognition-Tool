@@ -29,7 +29,7 @@
             <div class="carousel-inner" style="text-align: center">
                 {% for i in range(1, carousel_index + 1) %}
                     <div class="carousel-item {% if i == 1 %} active {% endif %}">
-                        <img src="{{url_for('static', filename='result' + i|string + '.jpg')}}" style="object-fit: contain; object-position: center; width: 80%">
+                        <img src="{{url_for('static', filename='result' + i|string + '.jpg')}}" style="object-fit: contain; object-position: center; width: 90%">
                     </div>
                 {% endfor %}
             </div>
