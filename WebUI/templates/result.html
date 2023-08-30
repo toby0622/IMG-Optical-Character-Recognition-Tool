@@ -22,10 +22,26 @@
 
         <hr/>
 
-        <div class="pt-3" style="text-align: center">
-            <p>Optical Character Recognition Visualization</p>
+        <div id="resultcarousel" class="carousel slide" data-ride="carousel">
+            <p class="text-center pt-3">Optical Character Recognition Visualization(s)</p>
 
-            <img src="{{url_for('static', filename='result.jpg')}}" alt="Result">
+            <div class="carousel-inner" style="text-align: center">
+                {% for i in range(1, carousel_index + 1) %}
+                    <div class="carousel-item {% if i == 1 %} active {% endif %}">
+                        <img src="{{url_for('static', filename='result' + i|string + '.jpg')}}" class="d-block w-80">
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#resultcarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#resultcarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
         <hr/>

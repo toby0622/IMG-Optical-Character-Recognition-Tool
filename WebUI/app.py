@@ -114,7 +114,8 @@ def upload_file():
     json_export_web(ocr_json)
 
     return render_template('result.html',
-                           ocr_final_result=ocr_final_result)
+                           ocr_final_result=ocr_final_result,
+                           carousel_index=total_images)
 
 
 @app.route('/uploadpdf', methods=['GET', 'POST'])
@@ -174,7 +175,8 @@ def upload_file_2():
     json_export_web(ocr_json)
 
     return render_template('result.html',
-                           ocr_final_result=ocr_final_result)
+                           ocr_final_result=ocr_final_result,
+                           carousel_index=page_number)
 
 
 @app.route('/downloadtxt')
@@ -212,4 +214,4 @@ def progress():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=9487)
+    app.run(host="0.0.0.0", port=9487)
