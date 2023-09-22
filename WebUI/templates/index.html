@@ -8,38 +8,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css" integrity="sha512-2eMmukTZtvwlfQoG8ztapwAH5fXaQBzaMqdljLopRSA0i6YKM8kBAOrSSykxu9NN9HrtD45lIqfONLII2AFL/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.js" integrity="sha512-vUJTqeDCu0MKkOhuI83/MEX5HSNPW+Lw46BA775bAWIp1Zwgz3qggia/t2EnSGB9GoS2Ln6npDmbJTdNhHy1Yw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
-	.pic-cropper{
-		border:1px solid #099;
-		width: 600px;
-		height: 1040px;
-		margin:auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding-top: 20px;
-	}
+        .pic-cropper{
+            margin:auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-	#submit {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
+        #submit {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-	#export {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
+        #export {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-	#result-canvas {
-		border:1px solid #CCCCCC
-	}
+        #result-canvas {
+            border:1px solid #CCCCCC
+        }
 
-	#image-canvas {
-		border:1px solid #CCCCCC
-	}
+        #image-canvas {
+            border:1px solid #CCCCCC
+        }
 	</style>
 </head>
 <body>
@@ -65,24 +59,36 @@
             <label class="form-check-label" for="chinese_vertical">Chinese Vertical Right To Left Format</label>
         </div>
 
-        <!-- tester -->
+        <!-- image crop -->
 
-        <div style="text-align:center;padding:10px"><input id="img-input" type="file"/></div>
-        <div class="pic-cropper">
-            <input id="slider" type="range"/>
-            <canvas id="image-canvas" width="500" height="500"></canvas>
-            <button id="submit">Preview</button>
-            <canvas id="result-canvas" width="400" height="400"></canvas>
-            <button id="export">Commit</button>
+        <div>
+            <form class="form-inline pt-3 text-center" method="post" enctype="multipart/form-data">
+                <input class="form-control" id="img-input" type="file" name="file0[]">
+            </form>
         </div>
 
-        <!-- tester -->
+        <div class="pic-cropper pt-3">
+            <div class="row" style="gap: 100px">
+                <div class="col text-center">
+                    <input id="slider" type="range"/>
+                    <canvas id="image-canvas" width="500" height="500"></canvas>
+                    <button id="submit" class="btn btn-primary">Preview</button>
+                </div>
+
+                <div class="col text-center">
+                    <canvas id="result-canvas" width="500" height="500"></canvas>
+                    <button id="export" class="btn btn-primary">Commit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- image crop end -->
 
         <div>
             <form class="form-inline pt-3 text-center" action="uploadimg" method="post" enctype="multipart/form-data">
                 <input class="form-control" type="file" multiple="" name="file1[]">
                 <br/>
-                <input class="form-control btn btn-primary" type="submit" value="IMG Upload">
+                <input class="form-control btn btn-primary" type="submit" value="Multi IMG Upload">
             </form>
         </div>
 
@@ -105,6 +111,8 @@
                 0%
             </div>
         </div>
+
+        <div class="pt-5"></div>
     </div>
 
     <script>
