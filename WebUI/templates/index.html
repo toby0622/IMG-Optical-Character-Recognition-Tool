@@ -139,7 +139,7 @@
             // fileReader.readAsBinaryString(imgInput.files[0]);
         }
 
-        // gain image and draw
+        // obtain image and draw
         getImage = function(imgUrl) {
             // img.src = './changtuxiang.jpg'
             img.src=imgUrl;
@@ -256,7 +256,6 @@
                 pX=e.clientX - lastmouseX;
                 pY=e.clientY - lastmouseY;
                 // console.log(checkPosition(pX,pY));
-
                 redrawImg(pX,pY);
             }
         }
@@ -281,15 +280,34 @@
             resultCxt.drawImage(img,lastImgX-50,lastImgY-50,img.width*currentFactor,img.height*currentFactor)
         }
 
-        // image download
+        // pass the crop image to backend
         exportBtn.onclick = function() {
-            var url = resultCanvas.toDataURL('image/png', 0.92);
-            var resultLink = document.createElement("a");
-            resultLink.download = "裁剪结果";
-            resultLink.href = url;
-            document.body.appendChild(resultLink);
-            resultLink.click();
-            resultLink.remove();
+            var url = resultCanvas.toDataURL('image/jpg', 0.92);
+            var arr = url.split(',');
+            var mime = arr[0].match(/:(.*?);/)[1];
+            var bstr = atob(arr[1]);
+            var n = bstr.length;
+            var u8arr = new Uint8Array(n);
+
+            while(n--){
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+
+            var obj = new Blob([u8arr], {type:mime});
+            var fd = new FormData();
+            fd.append("upfile", obj,"image.jpg");
+            console.log(typeof(fd));
+
+            $.ajax({
+                url: "/cropimage",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: fd,
+                success: function (response) {
+                    console.log(response);
+                }
+            })
         }
     </script>
 
