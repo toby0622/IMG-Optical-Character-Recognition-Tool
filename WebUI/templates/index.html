@@ -27,8 +27,6 @@
 
         <hr/>
 
-        <div class="pt-3"></div>
-
         <div class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="chinese_vertical">
             <label class="form-check-label" for="chinese_vertical">Chinese Vertical Right To Left Format</label>
@@ -36,14 +34,27 @@
 
         <!-- image crop start -->
 
+        <div class="pt-3"></div>
+
         <input class="form-control" type="file" name="image" id="image" onchange="readURL(this);"/>
 
-        <div class="image_container text-center" style="width: 50%">
-            <img id="blah" src="#" alt="your image"/>
+        <div class="pt-3"></div>
+
+        <div class="row text-center">
+            <div class="image_container col" style="width: 40%">
+                <p>Uploaded Image</p>
+                <img id="blah" src="#" alt="your image"/>
+            </div>
+
+            <div class="col" style="width: 40%">
+                <p>Crop Result</p>
+                <div id="cropped_result"></div>
+            </div>
         </div>
 
-        <div id="cropped_result"></div>
-        <button class="btn btn-primary" id="crop_button">Crop & Recognize</button>
+        <div class="pt-3"></div>
+
+        <button class="btn btn-primary" id="crop_button" style="width: 100%">Crop & Recognize</button>
 
         <!-- image crop end -->
 
@@ -51,7 +62,7 @@
             <form class="form-inline pt-3 text-center" action="uploadimg" method="post" enctype="multipart/form-data">
                 <input class="form-control" type="file" multiple="" name="file1[]">
                 <br/>
-                <input class="form-control btn btn-primary" type="submit" value="Multi IMG Upload">
+                <input class="form-control btn btn-primary" type="submit" value="Full Image Recognition">
             </form>
         </div>
 
@@ -61,7 +72,7 @@
             <form class="form-inline pt-3 text-center" action="uploadpdf" method="post" enctype="multipart/form-data">
                 <input class="form-control" type="file" name="file2[]">
                 <br/>
-                <input class="form-control btn btn-primary" type="submit" value="PDF Upload">
+                <input class="form-control btn btn-primary" type="submit" value="PDF Recognition">
             </form>
         </div>
 
@@ -93,11 +104,14 @@
         function initCropper(){
             var image = document.getElementById('blah');
             var cropper = new Cropper(image, {
-              aspectRatio: 1 / 1,
-              crop: function(e) {
-                console.log(e.detail.x);
-                console.log(e.detail.y);
-              }
+                dragMode: 'move',
+                viewMode: 1,
+                autoCropArea: 0.8,
+                zoomable: false,
+                crop: function(e) {
+                    console.log(e.detail.x);
+                    console.log(e.detail.y);
+                }
             });
 
             // On crop button clicked
