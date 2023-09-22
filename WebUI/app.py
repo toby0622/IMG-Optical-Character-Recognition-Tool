@@ -214,5 +214,13 @@ def progress():
     return Response(generate(), mimetype='text/event-stream')
 
 
+@app.route('/cropimage', methods=['POST', 'GET'])
+def crop_image():
+    img_data = request.files.get('upfile')
+    img_data.save(os.path.join(app.config['UPLOAD_FOLDER'], "crop.jpg"))
+
+    return "IMG Crop Succeed."
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=9487)
