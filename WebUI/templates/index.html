@@ -8,19 +8,138 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.css" integrity="sha512-bs9fAcCAeaDfA4A+NiShWR886eClUcBtqhipoY5DM60Y1V3BbVQlabthUBal5bq8Z8nnxxiyb1wfGX2n76N1Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.js" integrity="sha512-Zt7blzhYHCLHjU0c+e4ldn5kGAbwLKTSOTERgqSNyTB50wWSI21z0q6bn/dEIuqf6HiFzKJ6cfj2osRhklb4Og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" type="text/css" href="static/javascript/cropper.css">
+    <script type="text/javascript" src="static/javascript/cropper.js"></script>
 
     <style>
-        .previewBox, .previewBoxRound{
-            box-shadow: 0 0 5px #adadad;
-            width: 100px;
-            height: 100px;
-            margin-top: 30px;
-            overflow: hidden;
+        .imgBox{
+          width: 300px;
+          display: block;
+          background-color: #fff;
+          min-height: 100px;
+          box-shadow: 1px 1px  2px  2px #eee inset;
+          border-radius: 4px;
         }
-        .previewBoxRound{
-            border-radius: 50%;
+
+        .popup-wrap{
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background: rgba(0,0,0,0.5);
+          align-items: center;
+          justify-content: center;
+          display: none;
+        }
+
+        .popup-wrap.on{
+          display: flex;
+        }
+
+        .s-upload-container{
+          width:898px;
+          height:586px;
+          background: #fff;
+        }
+
+        .s-upload-container>.head{
+          border-bottom: 1px solid #e5e5e5;
+          line-height:54px;
+          font-size:18px;
+          padding:0 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .s-upload-container>.s-upload-main{
+          position: relative;
+          padding: 15px 30px;
+        }
+
+        .s-upload-main>.top-box{
+          overflow: hidden;
+          margin-bottom:18px;
+        }
+
+        .s-upload-main>.top-box .file-box{
+          position: relative;
+          overflow: hidden;
+          height: 35px;
+        }
+
+        .s-upload-main>.top-box .file-box .btn{
+          position: absolute;
+          left:0;
+          right:0;
+          bottom:0;
+          top:0;
+          opacity: 0;
+          width:100%;
+        }
+
+        .s-upload-main>.top-box .title{
+          float: left;
+          width: 100px;
+          line-height:35px;
+          font-weight: bold;
+          font-size:14px;
+        }
+
+        .s-upload-main>.top-box .right{
+          float: right;
+          line-height: 35px;
+          font-size: 14px;
+          width: 200px;
+          font-weight: bold;
+        }
+
+        .s-upload-container .s-upload-content{
+          height:364px;
+          overflow: hidden;
+        }
+
+        .s-upload-content .left-box{
+          float: left;
+          width:620px;
+          height:364px;
+          background:#ececec;
+        }
+
+        .s-upload-content .left-box .image{
+          display:block;
+          width:100%;
+          max-width:100%;
+        }
+
+        .s-upload-content .right-box{
+          float: right;
+          background:#ececec;
+        }
+
+        .s-upload-content .right-box .previewBox{
+          width: 200px;
+          height: 200px;
+          overflow: hidden;
+        }
+
+        .s-upload-main>.bottom-box{
+          overflow: hidden;
+          margin:30px 0 15px;
+        }
+
+        .s-upload-main>.bottom-box .left{
+          float: left;
+        }
+
+        .s-upload-main>.bottom-box .right{
+          float: right;
+        }
+
+        #uploadForm{
+          position: fixed;
+          left:1000px;
         }
     </style>
 </head>
@@ -49,29 +168,78 @@
 
         <div class="pt-3"></div>
 
-        <input class="form-control" type="file" name="image" id="image" onchange="readURL(this);"/>
+        <div>
+            <p class="pt-3">
+                😎 <u>Crop Image Recognition</u>
+            </p>
 
-        <div class="pt-3"></div>
-
-        <div class="row text-center">
-            <div class="image_container col" style="width: 40%">
-                <img id="blah" src="#" alt="your image"/>
+            <div class="btn-box">
+                <input type="button" class="size_btn btn btn-primary" value="200 * 100"/>
+                <input type="button" class="size_btn btn btn-primary" value="300 * 100"/>
+                <input type="button" class="size_btn btn btn-primary" value="150 * 150"/>
+                <input type="button" class="size_btn btn btn-primary" value="1500 * 300"/>
             </div>
 
-            <div class="col" style="width: 40%">
-                <div id="cropped_result"></div>
+            <div class="img-box pt-3">
+                <img src="" alt="" id="imgBoxId" class="imgBox">
             </div>
         </div>
 
-        <div class="pt-3"></div>
+        <div class="popup-wrap">
+            <div class="s-upload-container">
+                <div class="head">
+                    <span>Upload Image</span>
+                    <input type="button" class="btn btn-primary" id="closeBtn" value="Close"/>
+                </div>
 
-        <button class="btn btn-primary" id="crop_button" style="width: 100%">Crop Image Recognition</button>
+                <div class="s-upload-main">
+                    <div class="top-box">
+                        <span class="title">Target File</span>
+                        <div class="btn btn-primary file-box">
+                            Select
+                            <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="file" class="btn btn-primary" onchange="selectImg(this)" multiple="multiple">
+                        </div>
+                        <div class="right">Preview</div>
+                    </div>
+
+                    <div class="s-upload-content">
+                        <div class="left-box">
+                            <img src="" id="imageId" alt="" class="image">
+                        </div>
+
+                        <div class="right-box">
+                            <div class="previewBox"></div>
+                        </div>
+                    </div>
+
+                    <div class="action bottom-box">
+                        <div class="left">
+                            <input type="button" id="btnLeft"  value="Rotate Left" class="btn btn-primary" onclick="rotateFn('1')">
+                            <input type="button" id="btnRight" value="Rotate Right" class="btn btn-primary" onclick="rotateFn('2')">
+                        </div>
+
+                        <div class="right">
+                            <input type="button" id="btnLarge" class="btn btn-primary" value="Zoom In">
+                            <input type="button" id="btnSmall" class="btn btn-primary" value="Zoom Out">
+                            <input type="button" id="btnScale" class="btn btn-primary" value="Mirror Flip">
+                            <input type="button" id="btnInit" class="btn btn-primary" value="Reset">
+                            <input type="button" id="btnSubmit" class="btn btn-primary submit" value="Save">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- image crop end -->
 
+        <div class="pt-3"></div>
+
         <div>
-            <p>Complete Image Recognition</p>
-            <form class="form-inline pt-3 text-center" action="uploadimg" method="post" enctype="multipart/form-data">
+            <p class="pt-3">
+                😎 <u>Full Image Recognition</u>
+            </p>
+
+            <form class="form-inline text-center" action="uploadimg" method="post" enctype="multipart/form-data">
                 <input class="form-control" type="file" multiple="" name="file1[]">
                 <br/>
                 <input class="form-control btn btn-primary" type="submit" value="Full Image Recognition">
@@ -81,8 +249,11 @@
         <div class="pt-3"></div>
 
         <div>
-            <p>PDF Recognition</p>
-            <form class="form-inline pt-3 text-center" action="uploadpdf" method="post" enctype="multipart/form-data">
+            <p class="pt-3">
+                😎 <u>PDF Recognition</u>
+            </p>
+
+            <form class="form-inline text-center" action="uploadpdf" method="post" enctype="multipart/form-data">
                 <input class="form-control" type="file" name="file2[]">
                 <br/>
                 <input class="form-control btn btn-primary" type="submit" value="PDF Recognition">
@@ -103,55 +274,180 @@
     </div>
 
     <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result)
-                };
-                reader.readAsDataURL(input.files[0]);
-                setTimeout(initCropper, 1000);
-            }
+            // open popup windows
+        $('.size_btn').on('click', function() {
+            init($(this).attr('value'))
+            $('.popup-wrap').addClass('on')
+        })
+
+        // close popup windows
+        $('#closeBtn').on('click',function() {
+            closeFn()
+        })
+
+        function closeFn (){
+            $('.popup-wrap').removeClass('on')
+            $('#imageId').cropper("destroy");
         }
 
-        function initCropper(){
-            var image = document.getElementById('blah');
-            var cropper = new Cropper(image, {
-                dragMode: 'move',
-                viewMode: 1,
-                autoCropArea: 0.6,
-                zoomable: false,
-                crop: function(e) {
-                    console.log(e.detail.x);
-                    console.log(e.detail.y);
+        // initialization
+        function init (cut_size){
+            var sizeArr = [0,0];
+            var aspectRatio = null
+
+            if(cut_size) {
+                sizeArr = cut_size.split('*');
+                let w = sizeArr[0]*1
+                var h = sizeArr[1]*1
+
+                if(w > h) {
+                    aspectRatio = (w/h) / 1
+                } else {
+                    aspectRatio = 1 / (h/w)
                 }
-            });
+            }
 
-            // On crop button clicked
-            document.getElementById('crop_button').addEventListener('click', function(){
-                var imgurl =  cropper.getCroppedCanvas().toDataURL();
-                var img = document.createElement("img");
-                img.src = imgurl;
-                document.getElementById("cropped_result").appendChild(img);
-
-                cropper.getCroppedCanvas().toBlob(function (blob) {
-                    var formData = new FormData();
-                    formData.append('croppedImage', blob);
-
-                    $.ajax('/cropimage', {
-                        method: "POST",
-                        data: formData,
-                        processData: false,
-                        contentType: false,
-                        success: function () {
-                          console.log('Upload success');
-                        },
-                        error: function () {
-                          console.log('Upload error');
-                        }
-                    });
-                });
+            $('#imageId').cropper({
+                viewMode: 1,
+                dragMode: 'none',
+                initialAspectRatio: 1,
+                preview: '.previewBox',
+                // 是否在容器上显示网格背景
+                background: true,
+                // 定义自动剪裁区域的大小
+                // autoCropArea: 1,
+                // 是否允许鼠标 缩放图片
+                zoomOnWheel: false,
+                // 是否允许改变剪裁框的大小
+                cropBoxResizable:true,
+                // 是否可以移动裁剪框
+                cropBoxMovable:true,
+                // 是否允许旋转图片
+                rotatable: true,
+                aspectRatio:aspectRatio
+                // 初始化时，自动裁剪图片
+                // autoCrop:true,
             })
+        }
+
+        // degree
+        var deg = 0;
+
+        // left rotation
+        $("#btnLeft").on("click",function () {
+            rotateFn(1)
+        });
+
+        // right rotation
+        $("#btnRight").on("click",function () {
+            rotateFn(2)
+        });
+
+        // mirror flip
+        var flagX = true;
+        $("#btnScale").on("click",function () {
+            if(flagX){
+                $('#imageId').cropper("scaleX", -1);
+                flagX = false;
+            }else{
+                $('#imageId').cropper("scaleX", 1);
+                flagX = true;
+            }
+            flagX != flagX;
+        });
+
+        // reset position
+        $("#btnInit").on("click",function () {
+            $('#imageId').cropper("reset");
+        });
+
+        // zoom in
+        $("#btnLarge").on("click",function () {
+            $('#imageId').cropper("zoom",0.1);
+        });
+
+        // zoom out
+        $("#btnSmall").on("click",function () {
+            $('#imageId').cropper("zoom",-0.1);
+        });
+
+        // rotation
+        function rotateFn (type){
+            if(type == 1) {
+                deg += 90
+            } else {
+                deg -= 90
+            }
+
+            $('#imageId').cropper("rotate", deg);
+        }
+
+        // image upload
+        function selectImg(file) {
+            if (!file.files || !file.files[0]) {
+                    return;
+            }
+
+            var reader = new FileReader();
+
+            reader.onload = function (evt) {
+                var replaceSrc = evt.target.result;
+
+                // substitute cropper image
+                $('#imageId').cropper('replace', replaceSrc, false);//默认false，适应高度，不失真
+            }
+
+            reader.readAsDataURL(file.files[0]);
+        }
+
+        // crop
+        $("#btnSubmit").on("click",function () {
+            if ($("#imageId").attr("src") == null ) {
+                return false;
+            } else {
+                var cas = $('#imageId').cropper('getCroppedCanvas');//获取被裁剪后的canvas
+                var base64url = cas.toDataURL('image/png'); //转换为base64地址形式
+
+                $('#imgBoxId').attr('src',base64url)
+                closeFn()
+
+                // ajax 上传图片
+                // var formData = new FormData();
+                // var file = base64toFile(base64url)
+                // formData.append('__avatar1',file );
+
+                // $.ajax({
+                // 	type:'post',
+                // 	url: '/index.php?r=news/imgupload/toupload',
+                // 	cache: false,
+                // 	data: formData,
+                // 	processData: false,
+                // 	contentType: false,
+                // 	dataType:'json',
+                // }).then(function(res) {
+                // 	console.log(res,'-------上传成功')
+                // }).fail(function(err){ console.log(err)})
+            }
+        });
+
+        // base64 to file
+        function base64toFile  (dataurl)  {
+            const arr = dataurl.split(',')
+            const mime = arr[0].match(/:(.*?);/)[1]
+            const suffix = mime.split('/')[1]
+            const bstr = atob(arr[1])
+            let n = bstr.length
+            const u8arr = new Uint8Array(n)
+
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n)
+            }
+
+            const file = new File([u8arr], `__avatar1`, {
+                type: mime
+            })
+
+            return file
         }
     </script>
 
