@@ -47,6 +47,14 @@ def index():
     file_cleanup("uploadpdf")
     file_cleanup("static/images")
 
+    f1 = open("uploadimg/temp.txt", "w")
+    f2 = open("uploadpdf/temp.txt", "w")
+    f3 = open("static/images/temp.txt", "w")
+
+    f1.close()
+    f2.close()
+    f3.close()
+
     return render_template('index.html', template_folder='./')
 
 
