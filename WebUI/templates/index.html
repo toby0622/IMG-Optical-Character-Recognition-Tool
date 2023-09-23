@@ -10,38 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js" integrity="sha512-j7/1CJweOskkQiS5RD9W8zhEG9D9vpgByNGxPIqkO5KrXrwyDAroM9aQ9w8J7oRqwxGyz429hPVk/zR6IOMtSA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.css" integrity="sha512-bs9fAcCAeaDfA4A+NiShWR886eClUcBtqhipoY5DM60Y1V3BbVQlabthUBal5bq8Z8nnxxiyb1wfGX2n76N1Mw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.js" integrity="sha512-Zt7blzhYHCLHjU0c+e4ldn5kGAbwLKTSOTERgqSNyTB50wWSI21z0q6bn/dEIuqf6HiFzKJ6cfj2osRhklb4Og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <style>
-        .pic-cropper{
-            border:1px solid #099;
-            width: 600px;
-            height: 1040px;
-            margin:auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-        }
-
-        #submit {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        #export {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        #result-canvas {
-            border:1px solid #CCCCCC
-        }
-
-        #image-canvas {
-            border:1px solid #CCCCCC
-
-        }
-	</style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -74,19 +42,17 @@
 
         <div class="row text-center">
             <div class="image_container col" style="width: 40%">
-                <p>Uploaded Image</p>
                 <img id="blah" src="#" alt="your image"/>
             </div>
 
             <div class="col" style="width: 40%">
-                <p>Crop Result</p>
                 <div id="cropped_result"></div>
             </div>
         </div>
 
         <div class="pt-3"></div>
 
-        <button class="btn btn-primary" id="crop_button" style="width: 100%">Crop & Recognize</button>
+        <button class="btn btn-primary" id="crop_button" style="width: 100%">Crop Image Recognition</button>
 
         <!-- image crop end -->
 
@@ -138,7 +104,7 @@
             var cropper = new Cropper(image, {
                 dragMode: 'move',
                 viewMode: 1,
-                autoCropArea: 0.8,
+                autoCropArea: 0.6,
                 zoomable: false,
                 crop: function(e) {
                     console.log(e.detail.x);
