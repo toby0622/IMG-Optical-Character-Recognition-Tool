@@ -222,11 +222,45 @@ def progress():
     return Response(generate(), mimetype='text/event-stream')
 
 
-@app.route('/imagecrop', methods=['POST', 'GET'])
+@app.route('/imagecrop', methods=['GET', 'POST'])
 def image_crop():
-    imgData = request.files.get('crop')
-    imgData.save('static/images/crop.jpg')
+    img_data = request.files.get('crop')
+    img_data.save(os.path.join(app.config['UPLOAD_FOLDER'], "crop.jpg"))
     return "Crop Finished."
+
+
+@app.route('/uploadcrop', methods=['GET', 'POST'])
+def upload_file_3():
+    global REVERSE_TOGGLE
+    list_result = []
+    ocr_final_result = str("")
+    cc = OpenCC('s2twp')
+
+    ocr_result = image_ocr_match(os.path.join(app.config['UPLOAD_FOLDER'], "crop.jpg"), 1)
+
+    # chinese vertical written form
+    if REVERSE_TOGGLE:
+        ocr_result = written_reverse(ocr_result)
+    else:
+        ocr_result = written_default(ocr_result)
+
+    for r in ocr_result:
+        s2t = cc.convert(str(r[1][0]))
+        list_result.append(s2t)
+        ocr_final_result = ocr_final_result + str(s2t)
+
+    ocr_final_result = remove_special_characters(ocr_final_result)
+
+    ocr_json = json.dumps(
+        dict(text=ocr_final_result),
+        ensure_ascii=False)
+
+    txt_export_web(ocr_final_result)
+    json_export_web(ocr_json)
+
+    return render_template('result.html',
+                           ocr_final_result=ocr_final_result,
+                           carousel_index=1)
 
 
 if __name__ == "__main__":
