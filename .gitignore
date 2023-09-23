@@ -3,3 +3,6 @@ PyZ3950/
 WebUI/models/rec/inference.pdiparams
 WebUI/models/rec/inference.pdiparams.info
 WebUI/models/rec/inference.pdmodel
+WebUI/models/rec/inference.pdiparams
+WebUI/models/rec/inference.pdiparams.info
+WebUI/models/rec/inference.pdmodel
