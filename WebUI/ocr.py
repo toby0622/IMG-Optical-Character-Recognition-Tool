@@ -51,7 +51,7 @@ def image_ocr_match(image_path, counter_number):
     probability = [line[1][1] for line in data]
     im_show = draw_ocr(visual, rec_boxes, rec_texts, probability, font_path='font/Yozai-Regular.ttf')
     im_show = Image.fromarray(im_show)
-    im_show.save('static/result' + str(counter_number) + '.jpg', quality=100)
+    im_show.save('static/images/result' + str(counter_number) + '.jpg', quality=100)
 
     process_finish = datetime.datetime.now()  # process finishing time
 

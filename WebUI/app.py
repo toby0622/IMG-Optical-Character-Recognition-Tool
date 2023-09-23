@@ -45,7 +45,7 @@ def allowed_file_pdf(filename):
 def index():
     file_cleanup("uploadimg")
     file_cleanup("uploadpdf")
-    file_cleanup("static")
+    file_cleanup("static/images")
 
     return render_template('index.html', template_folder='./')
 
