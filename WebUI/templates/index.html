@@ -312,21 +312,12 @@
                 dragMode: 'none',
                 initialAspectRatio: 1,
                 preview: '.previewBox',
-                // 是否在容器上显示网格背景
                 background: true,
-                // 定义自动剪裁区域的大小
-                // autoCropArea: 1,
-                // 是否允许鼠标 缩放图片
                 zoomOnWheel: false,
-                // 是否允许改变剪裁框的大小
                 cropBoxResizable:true,
-                // 是否可以移动裁剪框
                 cropBoxMovable:true,
-                // 是否允许旋转图片
                 rotatable: true,
                 aspectRatio:aspectRatio
-                // 初始化时，自动裁剪图片
-                // autoCrop:true,
             })
         }
 
@@ -394,7 +385,7 @@
                 var replaceSrc = evt.target.result;
 
                 // substitute cropper image
-                $('#imageId').cropper('replace', replaceSrc, false);//默认false，适应高度，不失真
+                $('#imageId').cropper('replace', replaceSrc, false);
             }
 
             reader.readAsDataURL(file.files[0]);
@@ -402,31 +393,30 @@
 
         // crop
         $("#btnSubmit").on("click",function () {
-            if ($("#imageId").attr("src") == null ) {
+            if ($("#imageId").attr("src") == null) {
                 return false;
             } else {
-                var cas = $('#imageId').cropper('getCroppedCanvas');//获取被裁剪后的canvas
-                var base64url = cas.toDataURL('image/png'); //转换为base64地址形式
+                var cas = $('#imageId').cropper('getCroppedCanvas');
+                // base64 address
+                var base64url = cas.toDataURL('image/jpg');
 
                 $('#imgBoxId').attr('src',base64url)
                 closeFn()
 
-                // ajax 上传图片
-                // var formData = new FormData();
-                // var file = base64toFile(base64url)
-                // formData.append('__avatar1',file );
+                // ajax upload image
+                var formData = new FormData();
+                var file = base64toFile(base64url)
+                formData.append('crop', file, 'crop.jpg');
 
-                // $.ajax({
-                // 	type:'post',
-                // 	url: '/index.php?r=news/imgupload/toupload',
-                // 	cache: false,
-                // 	data: formData,
-                // 	processData: false,
-                // 	contentType: false,
-                // 	dataType:'json',
-                // }).then(function(res) {
-                // 	console.log(res,'-------上传成功')
-                // }).fail(function(err){ console.log(err)})
+                $.ajax({
+                	type:'post',
+                	url: '/imagecrop',
+                	data: formData,
+                	processData: false,
+                	contentType: false,
+                }).then(function(res) {
+                	console.log(res, 'Upload Finished.')
+                }).fail(function(err){console.log(err)})
             }
         });
 

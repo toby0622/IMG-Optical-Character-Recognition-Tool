@@ -222,5 +222,12 @@ def progress():
     return Response(generate(), mimetype='text/event-stream')
 
 
+@app.route('/imagecrop', methods=['POST', 'GET'])
+def image_crop():
+    imgData = request.files.get('crop')
+    imgData.save('static/images/crop.jpg')
+    return "Crop Finished."
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=9487)
