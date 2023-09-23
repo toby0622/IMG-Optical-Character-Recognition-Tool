@@ -216,7 +216,7 @@ def progress():
 
 @app.route('/cropimage', methods=['POST', 'GET'])
 def crop_image():
-    img_data = request.files.get('upfile')
+    img_data = request.files.get('croppedImage')
     img_data.save(os.path.join(app.config['UPLOAD_FOLDER'], "crop.jpg"))
 
     return "IMG Crop Succeed."
