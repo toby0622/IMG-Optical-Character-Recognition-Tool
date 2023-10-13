@@ -33,7 +33,7 @@ def image_ocr_match(image_path, counter_number):
 
     # cv2.imwrite('WebUI/opencv/' + 'P' + str(counter_number) + '.png', dilation_image)
 
-    recognition_result = ocr_model.ocr(dilation_image)
+    recognition_result = ocr_model.ocr(image)
 
     # result = recognition_result[0]
     #
